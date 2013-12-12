@@ -6,6 +6,7 @@ gem 'rails', '3.2.14'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
+gem 'omniauth'
 gem 'omniauth-github'
 
 # Gems used only for assets and not required
