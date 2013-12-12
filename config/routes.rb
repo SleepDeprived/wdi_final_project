@@ -1,6 +1,8 @@
 FinalProject::Application.routes.draw do
   root to: 'welcome#index'
 
+  match '/auth/:provider/callback' => 'sessions#create'
+
   get "welcome/index"
 
   # The priority is based upon order of creation:
