@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :email, :first_name, :github_login, :last_name, :oauth_expires_at, :oauth_token, :proider, :uid
+  attr_accessible :email, :first_name, :github_login, :last_name, :oauth_expires_at, :oauth_token, :provider, :uid
 
   def self.create_with_omniauth(auth)
     create! do |user|

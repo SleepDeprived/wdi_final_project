@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(:version => 20131212223102) do
     t.string   "last_name"
     t.string   "github_login"
     t.string   "uid"
-    t.string   "proider"
+    t.string   "provider"
     t.string   "email"
     t.string   "oauth_token"
     t.datetime "oauth_expires_at"
