@@ -7,6 +7,18 @@ $(document).ready(function(){
   	console.log("button detects click");
   })
 
+// this hides or shows the time selection box and the timer start button
+// can be refactored to pull out the anonymous function into a named function below
+  $('#timer_toggle').on('click', function() {
+  	console.log("switch toggled");
+  	debugger;
+  	if ($(this).is(':checked')) {
+  		$('#timer-elements').show();
+  	} else {
+  		$('#timer-elements').hide();
+  	}
+  });
+
   // this should be moved to the appropriate view
   // currently this code does not work
   $('#start_timer_button').on('click', function() {
