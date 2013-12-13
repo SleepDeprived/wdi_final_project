@@ -9,6 +9,7 @@ gem 'pg'
 
 gem 'omniauth'
 gem 'omniauth-github'
+gem 'github_api'
 
 # Gems used only for assets and not required
 # in production environments by default.
