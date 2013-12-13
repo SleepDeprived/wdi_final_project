@@ -42,12 +42,12 @@ ActiveRecord::Schema.define(:version => 20131212223102) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "github_login"
+    t.string   "github_username"
     t.string   "uid"
     t.string   "provider"
+    t.string   "name"
     t.string   "email"
+    t.text     "github_image"
     t.string   "oauth_token"
     t.datetime "oauth_expires_at"
     t.datetime "created_at",       :null => false
