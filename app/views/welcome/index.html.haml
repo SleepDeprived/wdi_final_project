@@ -1,3 +1,6 @@
 %h1 Developer Productivity
 %p this is the homepage that will show a list of locations that a developer can work at
 %p it will also show some github analytics
+
+- if current_user
+  %a{:href => "/github", :title => "Test github_call"} Test
