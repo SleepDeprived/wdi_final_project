@@ -1,1 +1,1 @@
-timer_tests.rb
+require "spec-helper"
