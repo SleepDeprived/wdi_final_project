@@ -9,7 +9,13 @@
 <body>
 
   <div id="user_nav">
-    <%= link_to "Sign in with GitHub", "/auth/github" %>
+    <% if current_user %>
+    <!-- not sure if current_user.github_login will work yet -->
+      Welcome, <% current_user.github_login %>!
+      <%= link_to "Sign Out", signout_path %>
+    <% else %>
+      <%= link_to "Sign in with GitHub", "/auth/github" %>
+    <% end %>
   </div>
 
 <%= yield %>
