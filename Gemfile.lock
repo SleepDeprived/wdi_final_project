@@ -274,7 +274,7 @@ GEM
       polyglot
       polyglot (>= 0.3.1)
     tzinfo (0.3.38)
-    uglifier (2.3.2)
+    uglifier (2.3.3)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
     websocket (1.0.7)
@@ -302,10 +302,7 @@ DEPENDENCIES
   meta_request
   octokit (~> 2.0)
   omniauth
-<<<<<<< HEAD
-=======
   omniauth-github
->>>>>>> origin/master
   pg
   pry-rails
   quiet_assets
