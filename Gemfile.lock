@@ -101,6 +101,13 @@ GEM
       multipart-post (~> 1.2.0)
     ffi (1.9.3)
     formatador (0.2.4)
+    github_api (0.11.0)
+      addressable (~> 2.3)
+      faraday (~> 0.8, < 0.10)
+      hashie (>= 1.2)
+      multi_json (>= 1.7.5, < 2.0)
+      nokogiri (~> 1.6.0)
+      oauth2
     guard (2.2.4)
       formatador (>= 0.2.4)
       listen (~> 2.1)
@@ -294,6 +301,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   database_cleaner
   emblem-rails (~> 0.2.1)
+  github_api
   guard-rspec
   haml-rails
   handlebars_assets

@@ -6,4 +6,15 @@ class WelcomeController < ApplicationController
 
   def dashboard
   end
+
+  def github
+    @github = current_user.github_call
+    render json: @github
+  end
+
 end
+
+# $.ajax({
+#     dataType: "json",
+#     url: "/github"
+#   })
