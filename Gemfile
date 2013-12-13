@@ -7,8 +7,6 @@ gem 'rails', '3.2.14'
 
 gem 'pg'
 
-# gemspec
-
 gem 'omniauth'
 gem 'omniauth-github'
 
