@@ -170,15 +170,12 @@ GEM
     omniauth (1.1.4)
       hashie (>= 1.2, < 3)
       rack
-<<<<<<< HEAD
-=======
     omniauth-github (1.1.1)
       omniauth (~> 1.0)
       omniauth-oauth2 (~> 1.1)
     omniauth-oauth2 (1.1.1)
       oauth2 (~> 0.8.0)
       omniauth (~> 1.0)
->>>>>>> origin/master
     pg (0.17.0)
     polyglot (0.3.3)
     pry (0.9.12.4)
