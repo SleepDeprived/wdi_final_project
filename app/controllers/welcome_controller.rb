@@ -8,6 +8,7 @@ class WelcomeController < ApplicationController
   end
 
   def github
+    # binding.pry
     @github = current_user.github_call
     render json: @github
   end
