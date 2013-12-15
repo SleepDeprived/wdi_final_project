@@ -5,8 +5,19 @@
 - if current_user
   %a{:href => "/github", :title => "Test github_call"} Test
 
-%button#new_location_button Add Location
+%br
+
+%button Add Location
 #location_form
+/ = form_tag '/locations' do
+/ = field_set_tag do
+/   = label_tag :name, 'Name:'
+/   = text_field_tag :name
+/   = label_tag :address, 'Address:'
+/   = text_field_tag :address
+/   / add more fields for the rest
+/   = submit_tag 'Save Changes'
+/ create a form for a new location
 
 #locations
 #detail

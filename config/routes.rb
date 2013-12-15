@@ -9,6 +9,8 @@ FinalProject::Application.routes.draw do
   get "/dashboard" => "welcome#dashboard"
   get "/github" => "welcome#github"
 
+  resources :locations
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
