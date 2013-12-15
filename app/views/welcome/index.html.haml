@@ -4,3 +4,12 @@
 
 - if current_user
   %a{:href => "/github", :title => "Test github_call"} Test
+
+%button#new_location_button Add Location
+#location_form
+
+#locations
+#detail
+
+= render partial: 'location'
+= render partial: 'detail'
