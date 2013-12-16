@@ -6,16 +6,16 @@ App.Router = Backbone.Router.extend({
     Backbone.history.start();
   },
   
-  // // summary graph on the dashboard when it loads
-  // dashboard: function(){
-  //   console.log('dashboard');
-  //   // summary will provide an overview of commits 
-  //   // initial version will be for a week
-  //   // Creates the collection to be passed into the view
-  //   var summary = new Project.Collections.Summaries();
-  //   // Creates the view that will be appended to the page
-  //   new Project.Views.SummariesView({collection: summary})
-  // }
+  // summary graph on the dashboard when it loads
+  dashboard: function(){
+    console.log('dashboard');
+    // summary will provide an overview of commits 
+    // initial version will be for a week
+    // Creates the collection to be passed into the view
+    var summary = new Project.Collections.Summaries();
+    // Creates the view that will be appended to the page
+    new Project.Views.SummariesView({collection: summary})
+  }
 
 });
 
