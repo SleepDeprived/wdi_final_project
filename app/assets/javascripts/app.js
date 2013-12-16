@@ -11,7 +11,6 @@ $(document).ready(function(){
 // can be refactored to pull out the anonymous function into a named function below
   $('#timer_toggle').on('click', function() {
   	console.log("switch toggled");
-  	debugger;
   	if ($(this).is(':checked')) {
   		$('#timer-elements').show();
   	} else {
