@@ -21,5 +21,6 @@
 //= require setup
 //= require routes
 //= require_tree ./templates
+//= require_tree ./features
 //
 //= require app
