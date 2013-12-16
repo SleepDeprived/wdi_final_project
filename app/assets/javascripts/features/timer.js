@@ -8,15 +8,34 @@ function showHideTimer() {
   	}
 }
 
+function timer() {
+	if (window.webkitNotifications.checkPermission() !== 0) {
+		window.webkitNotifications.requestPermission();
+	} else {
+		console.log("button detects click");
+		var durationInMinutes = $('#time').val();
+		var duration = durationInMinutes * 60;
+		var counter = setInterval(countdown,1000);
 
-
-
-
-
-
-
-
-
+		function countdown() {
+		  if (duration <= 0) {
+		  	debugger;
+		     window.webkitNotifications.createNotification(null, 'Notification Title', 'Notification content...');
+		     clearInterval(counter); //this isn't working, check into it
+		     $("#timer").html();
+		     //counter ended, do something here
+		     // this is where the alert goes
+		     // also need to reset the timer -- have click create new Timer object instead?
+		     return;
+		  }
+		  //Do code for showing the number of seconds here
+		  var minutes = Math.floor(duration / 60);
+		  var seconds = duration - minutes * 60;
+		  $("#timer").html(minutes + " min " + seconds + " sec"); // watch for spelling
+		  duration = duration-1;
+		} //end of countdown function
+	}
+}	
 
 // function Timer(){
 // 	this.time = 0;
@@ -30,26 +49,5 @@ function showHideTimer() {
 
 // }
 
-// function runTimer(duration) {
-// 	duration = duration -1;
-// 	if (duration <= 0) {
-// 		// this is where the alert goes
-// 	}
-// }
-
-
-// // this should be moved to the appropriate view
-// // currently this code does not work
-// $('#start_timer_button').on('click', function() {
-//   if (window.webkitNotifications.checkPermission() == 0) { // 0 is PERMISSION_ALLOWED
-//     // function defined in step 2
-//     console.log("button works");
-//     window.webkitNotifications.createNotification(
-//         'icon.png', 'Notification Title', 'Notification content...');
-//   } else {
-//     window.webkitNotifications.requestPermission();
-//     console.log("permission request should have been made")
-//   }
-// }, false);
 
 

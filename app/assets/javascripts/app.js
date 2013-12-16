@@ -6,8 +6,8 @@ $(document).ready(function(){
   $('#timer_toggle').on('click', showHideTimer);
 
   // this works --- to be deleted once button is working
-  $('#start_timer_button').on('click', function() {
-  	console.log("button detects click");
-  })
+  $('#start_timer_button').on('click', timer);
  
 });
+
+
