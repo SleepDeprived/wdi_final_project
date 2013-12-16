@@ -19,6 +19,8 @@ group :assets do
 
   gem "octokit", "~> 2.0"
 
+  gem 'hamlbars', '~> 2.0'
+
   gem "emblem-rails", "~> 0.2.1"
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes

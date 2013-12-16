@@ -1,3 +1,11 @@
+/ %script#locations-template{type:"text/x-handlebars-template"}
+/ %ul.authors
+/ = hb 'each devLocations' do
+/   %li<
+/     = succeed ',' do
+/       = hb 'name'
+/     = hb 'address'
+
 %script#locations-template{type:"text/x-handlebars-template"}
   %ul
     each devLocations
@@ -5,5 +13,12 @@
     %li.location
       %div
         %strong = name
-        / %strong = address
-    / {{/each}}
+
+/ %script#exercises-template{type:"text/x-handlebars-template"}
+/   %ul
+/     {{#each devLocations}}
+/     %li.location{data: {id: "{{id}}" }}
+/       %div
+/         %strong {{name}}
+/     {{/each}}
+

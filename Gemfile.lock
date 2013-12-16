@@ -124,6 +124,11 @@ GEM
       activesupport (>= 3.1, < 4.1)
       haml (>= 3.1, < 4.1)
       railties (>= 3.1, < 4.1)
+    hamlbars (2.0.1)
+      execjs (>= 1.2)
+      haml
+      sprockets
+      tilt
     handlebars-source (1.1.2)
     handlebars_assets (0.15)
       execjs (>= 1.2.9)
@@ -304,6 +309,7 @@ DEPENDENCIES
   github_api
   guard-rspec
   haml-rails
+  hamlbars (~> 2.0)
   handlebars_assets
   jasmine
   jquery-rails
