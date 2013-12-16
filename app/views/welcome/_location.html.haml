@@ -1,8 +1,9 @@
 %script#locations-template{type:"text/x-handlebars-template"}
   %ul
-    {{#each locations}}
-    %li.location{data: {id: "{{id}}" }}
+    each locations
+    / %li.location {data: {id: = id }}
+    %li.location
       %div
-        %strong {{name}}
-        %strong {{address}}
-    {{/each}}
+        %strong = name
+        / %strong = address
+    / {{/each}}

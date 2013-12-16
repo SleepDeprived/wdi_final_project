@@ -1,4 +1,4 @@
-var LocationView = Backbone.View.extend({
+App.Views.LocationsView = Backbone.View.extend({
 
   el: "#detail",
 
