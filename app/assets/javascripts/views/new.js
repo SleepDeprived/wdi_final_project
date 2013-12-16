@@ -12,7 +12,6 @@ App.Views.LocationForm = Backbone.View.extend({
   },
 
   render: function() {
-    // TODO: finish new location form!!!
     this.$el.html("#location_form");
   },
 
@@ -30,8 +29,7 @@ App.Views.LocationForm = Backbone.View.extend({
     var state = $('#location_state').val();
     var zipcode = $('#location_zipcode').val();
     var description = $('#location_description').val();
-    // add fields for all the other location data
-    var location = new Location({
+    var devLocation = new App.Models.Location({
       name: name,
       address: address,
       address_detail: address_detail,
@@ -40,7 +38,7 @@ App.Views.LocationForm = Backbone.View.extend({
       zipcode: zipcode,
       description: description
     });
-    location.save();
+    devLocation.save();
     router.navigate("/", {trigger: true});
   }
 })
