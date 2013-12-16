@@ -17,6 +17,7 @@
 //= require handlebars
 //= require underscore
 //= require backbone
+//= require moment
 //
 //= require setup
 //= require routes
@@ -24,5 +25,6 @@
 //= require_tree ./models
 //= require_tree ./collections
 //= require_tree ./views
+//= require_tree ./features
 //
 //= require app
