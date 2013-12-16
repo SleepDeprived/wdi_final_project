@@ -12,10 +12,13 @@ var LocationForm = Backbone.View.extend({
   },
   newLocation: function() {
     console.log("new location");
-    // var name = $('whatever id i give the name field ').val();
-    // var address = $('').val();
+    // var name = $('#loc_name').val();
+    // var address = $('#loc_address').val();
     // add fields for all the other location data
-    // var location = new Location({name: name, address: address})
+    // var location = new Location({
+    //   name: name,
+    //   address: address
+    // });
     // location.save();
     router.navigate("/", {trigger: true});
   }

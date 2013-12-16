@@ -8,7 +8,7 @@
 %br
 
 %button Add Location
-#location_form
+/ #location_form
 / = form_tag '/locations' do
 / = field_set_tag do
 /   = label_tag :name, 'Name:'
@@ -16,8 +16,25 @@
 /   = label_tag :address, 'Address:'
 /   = text_field_tag :address
 /   / add more fields for the rest
-/   = submit_tag 'Save Changes'
+/   = submit_tag 'Add Location'
 / create a form for a new location
+
+/ Make the form hidden, and toggle it when "Add Locaion" button is clicked
+= form_for '/locations' do |f|
+  %p
+    = f.label :name
+    %br
+    = f.text_field :name
+  %p
+    = f.label :address
+    %br
+    = f.text_field  :address
+  %p
+    = f.label :city
+    %br
+    = f.text_field :city
+  %p.button
+    = f.submit 'Create Location'
 
 #locations
 #detail
