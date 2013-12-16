@@ -16,8 +16,8 @@ App.Views.LocationForm = Backbone.View.extend({
     this.$el.html("#location_form");
   },
 
-  showForm: function(){
-
+  showForm: function(e){
+    // $("#location_form").show();
   },
 
   createLocation: function(e) {
@@ -25,11 +25,20 @@ App.Views.LocationForm = Backbone.View.extend({
     console.log("new location");
     var name = $('#location_name').val();
     var address = $('#location_address').val();
+    var address_detail = $('#location_address_detail').val();
+    var city = $('#location_city').val();
+    var state = $('#location_state').val();
+    var zipcode = $('#location_zipcode').val();
+    var description = $('#location_description').val();
     // add fields for all the other location data
     var location = new Location({
       name: name,
-      address: address
-      // add the rest...
+      address: address,
+      address_detail: address_detail,
+      city: city,
+      state: state,
+      zipcode: zipcode,
+      description: description
     });
     location.save();
     router.navigate("/", {trigger: true});

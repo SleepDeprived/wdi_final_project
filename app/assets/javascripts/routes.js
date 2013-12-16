@@ -7,14 +7,16 @@ App.Router = Backbone.Router.extend({
     Backbone.history.start();
   },
   index: function(){
-    console.log('index');
+    console.log('bb router index');
+    // model
+    var devLocation = new App.Models.Location();
     // collection
-    locations = new Locations();
+    var devLocations = new App.Collections.Locations();
     // collection view
-    locationsView = new LocationsView({collection: locations});
+    var locationsView = new App.Views.LocationsView({collection: devLocations});
   },
   new: function(){
     // form to create new location
-    var locationForm = new LocationForm();
+    var locationForm = new App.Views.LocationForm();
   }
 });

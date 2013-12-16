@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
 
   def github_call   #(username, repo)
     # binding.pry
-    Github.repos.commits.all @attributes['github_username'], 'market_app' #(username, repo)
+    Github.repos.commits.all @attributes['github_username'], 'sort_chall' #(username, repo)
   end
 
 end

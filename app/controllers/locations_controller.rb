@@ -24,7 +24,7 @@ class LocationsController < ApplicationController
   # GET /locations/new
   # GET /locations/new.json
   def new
-    @location = Location.newLocation
+    @location = Location.new
 
     respond_to do |format|
       format.html # new.html.erb
