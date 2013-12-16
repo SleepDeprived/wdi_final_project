@@ -21,7 +21,7 @@ function timer() {
 
 		function countdown() {
 		  if (duration <= 0) {
-		     var alarm = window.webkitNotifications.createNotification('rails.png', 'Time to Commit', "I pitty the fool who doesn't commit regularly");
+		     var alarm = window.webkitNotifications.createNotification('rails.png', 'Time to Commit', "I pity the fool who doesn't commit");
 		     // make a bunch of different commit messages and sample them -- purely to keep people intereted in reading the messages
 		     alarm.show();
 		     // add a sound 
@@ -47,7 +47,7 @@ function timer() {
 
 // var phrases = [
 // "You don't want to lose all of your valuable work!",
-// "I pitty the fool who doesn't commit regularly"
+// "I pity the fool who doesn't commit"
 // ]
 
 // ------------------------------------------------------------------
