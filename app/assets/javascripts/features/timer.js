@@ -13,18 +13,21 @@ function timer() {
 		window.webkitNotifications.requestPermission();
 	} else {
 		console.log("button detects click");
+		// selections on page are set in minutes
 		var durationInMinutes = $('#time').val();
+		// converts minutes to seconds (setInterval is set in seconds)
 		var duration = durationInMinutes * 60;
 		var counter = setInterval(countdown,1000);
 
 		function countdown() {
 		  if (duration <= 0) {
-		  	debugger;
-		     window.webkitNotifications.createNotification(null, 'Notification Title', 'Notification content...');
+		     var alarm = window.webkitNotifications.createNotification('rails.png', 'Time to Commit', "I pitty the fool who doesn't commit regularly");
+		     // make a bunch of different commit messages and sample them -- purely to keep people intereted in reading the messages
+		     alarm.show();
+		     // add a sound 
+		     // use choir.io (bloop: [alarm, kasplode, horn, warble, success, cheer], submarine: [echopop, dolphinchuckle, lownar, submed, orca])
 		     clearInterval(counter); //this isn't working, check into it
-		     $("#timer").html();
-		     //counter ended, do something here
-		     // this is where the alert goes
+		     $("#timer").html('');
 		     // also need to reset the timer -- have click create new Timer object instead?
 		     return;
 		  }
@@ -36,6 +39,20 @@ function timer() {
 		} //end of countdown function
 	}
 }	
+
+
+// function sample(a, n) {
+//     return _.take(_.shuffle(a), n);
+// }
+
+// var phrases = [
+// "You don't want to lose all of your valuable work!",
+// "I pitty the fool who doesn't commit regularly"
+// ]
+
+// ------------------------------------------------------------------
+// NEED TO NAMESPACE AND THEN CAN ADD FUN THINGS TO THE TIMER
+// ------------------------------------------------------------------
 
 // function Timer(){
 // 	this.time = 0;
