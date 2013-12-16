@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
   attr_accessible :email, :github_image, :github_username, :name, :oauth_expires_at, :oauth_token, :provider, :uid
 
+  attr_accessor :github_data
+
   def self.create_with_omniauth(auth)
     create! do |user|
       # binding.pry
@@ -15,7 +17,19 @@ class User < ActiveRecord::Base
 
   def github_call   #(username, repo)
     # binding.pry
-    Github.repos.commits.all @attributes['github_username'], 'sort_chall' #(username, repo)
+    @github_data = Github.repos.commits.all @attributes['github_username'], 'sort_chall' #(username, repo)
+  end
+
+  def organize_by_week
+    # organize @github_data (self.github_data) in a weekly format
+  end
+
+  def organize_by_month
+    
+  end
+
+  def organize_by_year
+    
   end
 
 end
