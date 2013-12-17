@@ -1,8 +1,8 @@
 App.Collections.Locations = Backbone.Collection.extend({
   url: "/locations",
-  // is Location a reserved word??
-  model: Location,
+  model: App.Models.Location,
   initialize: function(){
     this.fetch();
+    // debugger;
   }
 });
