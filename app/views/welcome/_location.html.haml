@@ -6,19 +6,19 @@
 /       = hb 'name'
 /     = hb 'address'
 
-%script#locations-template{type:"text/x-handlebars-template"}
-  %ul
-    each devLocations
-    / %li.location {data: {id: = id }}
-    %li.location
-      %div
-        %strong = name
-
-/ %script#exercises-template{type:"text/x-handlebars-template"}
+/ %script#locations-template{type:"text/x-handlebars-template"}
 /   %ul
-/     {{#each devLocations}}
-/     %li.location{data: {id: "{{id}}" }}
+/     each locations
+/     / %li.location {data: {id: = id }}
+/     %li.location
 /       %div
-/         %strong {{name}}
-/     {{/each}}
+/         %strong = name
+
+%script#exercises-template{type:"text/x-handlebars-template"}
+  %ul
+    {{#each locations}}
+    %li.location{data: {id: "{{id}}" }}
+      %div
+        %strong {{name}}
+    {{/each}}
 

@@ -5,9 +5,6 @@ App.Models.Location = Backbone.Model.extend({
     var errors = [];
     if(attrs.name === "" || attrs.address === "" || attrs.address_detail === "" || attrs.city === "" || attrs.state === "" || attrs.zipcode === "" || attrs.description === ""){
       errors.push("Please fill in all fields!");
-      debugger;
-      alert(attrs.name);
-      alert(attrs.zipcode);
     }
     if(errors.length > 0) {
       return errors;
