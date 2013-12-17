@@ -1,24 +1,22 @@
 App.Router = Backbone.Router.extend({
   routes: {
-    ""          : "index",
-    "new"       : "new"
+    ""          : "index"
+    // "new"       : "new"
   },
+
   initialize: function(){
     Backbone.history.start();
+    var devLocation = new App.Models.Location();
+    App.main = new App.Views.Main({model: devLocation});
   },
 
   index: function(){
     console.log('bb router index');
-    // model
-    // var devLocation = new App.Models.Location();
     // collection
     var devLocations = new App.Collections.Locations();
     // collection view for all locations
     var locationsView = new App.Views.LocationsView({collection: devLocations});
-  },
-  new: function(){
-    // form to create new location
-    var locationForm = new App.Views.LocationForm();
+    // debugger;
   },
 
   // summary graph on the dashboard when it loads

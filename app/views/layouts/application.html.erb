@@ -9,7 +9,8 @@
 <body>
 
   <div class="container">
-    <div id="user_nav">
+
+    <div id="user_nav" class="column omega">
       <% if current_user %>
         Welcome, <%= current_user.github_username %>!
         <%= link_to "Sign Out", signout_path %>
@@ -20,18 +21,11 @@
 
     <div id="notice"></div>
 
-    <nav>
-      <ul>
-        <li><a href="/dashboard">Dashboard</a></li>
-        <li><a href="/">Locations</a></li>
-      </ul>
-    </nav>
-
-
 
   <%= yield %>
 
 </div>
+<!-- container end -->
 
 </body>
 </html>
