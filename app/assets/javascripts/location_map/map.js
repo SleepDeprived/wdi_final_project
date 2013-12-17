@@ -29,9 +29,14 @@ googleMap.getLocations = function() {
     type: "GET",
     url: "/locations"
   }).done(function(data){
-    debugger;
     locs = data;
     console.log(data);
+    if (locs.locations.length > 0 && window.location.pathname === '/') {
+    for (i=0; i<locs.locations.length; i++) {
+      var location = locs[i];
+        googleMap.addPin(location);
+      }
+    }
   });
 };
 
@@ -45,7 +50,7 @@ googleMap.createMap = function() {
     styles: [{featureType:"landscape",stylers:[{saturation:-100},{lightness:65},{visibility:"on"}]},{featureType:"poi",stylers:[{saturation:-100},{lightness:51},{visibility:"simplified"}]},{featureType:"road.highway",stylers:[{saturation:-100},{visibility:"simplified"}]},{featureType:"road.arterial",stylers:[{saturation:-100},{lightness:30},{visibility:"on"}]},{featureType:"road.local",stylers:[{saturation:-100},{lightness:40},{visibility:"on"}]},{featureType:"transit",stylers:[{saturation:-100},{visibility:"simplified"}]},{featureType:"administrative.province",stylers:[{visibility:"off"}]/**/},{featureType:"administrative.locality",stylers:[{visibility:"off"}]},{featureType:"administrative.neighborhood",stylers:[{visibility:"on"}]/**/},{featureType:"water",elementType:"labels",stylers:[{visibility:"on"},{lightness:-25},{saturation:-100}]},{featureType:"water",elementType:"geometry",stylers:[{hue:"#ffff00"},{lightness:-25},{saturation:-97}]}]
   };
 
-  map = new google.maps.Map(document.getElementById("gmap-canvas"), mapOptions);
+  var map = new google.maps.Map(document.getElementById("gmap-canvas"), mapOptions);
 
 };
 
@@ -57,7 +62,7 @@ googleMap.addPin = function() {
     position: locLatLng,
     title: loc.name
   });
-
+  debugger;
   marker.setMap(map);
 
 };
@@ -73,13 +78,6 @@ googleMap.showPosition = function(position) {
 $(document).ready(function(){
   googleMap.getLocation();
   googleMap.getLocations();
-
-  if (locs.locations.length > 0 && window.location.pathname === '/') {
-    for (i=0; i<locs.locations.length; i++) {
-      var location = locs[i];
-        googleMap.addPin(location);
-      }
-    }
 });
 
 
