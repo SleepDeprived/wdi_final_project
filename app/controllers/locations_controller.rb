@@ -6,7 +6,7 @@ class LocationsController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @locations }
+      format.json { render json: @locations.to_json }
     end
   end
 
