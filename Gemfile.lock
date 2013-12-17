@@ -101,6 +101,7 @@ GEM
       multipart-post (~> 1.2.0)
     ffi (1.9.3)
     formatador (0.2.4)
+    geocoder (1.1.8)
     github_api (0.11.0)
       addressable (~> 2.3)
       faraday (~> 0.8, < 0.10)
@@ -306,6 +307,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   database_cleaner
   emblem-rails (~> 0.2.1)
+  geocoder
   github_api
   guard-rspec
   haml-rails

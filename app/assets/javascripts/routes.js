@@ -1,7 +1,7 @@
 App.Router = Backbone.Router.extend({
   routes: {
-    ""          : "index",
-    "new"       : "new"
+    ""          : "index"
+    // "new"       : "new"
   },
   initialize: function(){
     Backbone.history.start();

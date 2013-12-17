@@ -1,15 +1,17 @@
 App.Views.Main = Backbone.View.extend({
-  el: "#locations",
+  el: ".container",
 
   events: {
     "click #add_location"  : "showForm"
   },
 
   initialize: function(){
+    console.log("initialized main.js");
     this.locationForm = new App.Views.LocationForm({model: this.model});
   },
 
   showForm: function(e){
+    alert("show form");
     this.locationForm.show();
   }
 });
@@ -23,13 +25,13 @@ App.Views.LocationForm = Backbone.View.extend({
   },
 
   initialize: function(){
-    this.name = $('#location_name').val();
-    this.address = $('#location_address').val();
-    this.address_detail = $('#location_address_detail').val();
-    this.city = $('#location_city').val();
-    this.state = $('#location_state').val();
-    this.zipcode = $('#location_zipcode').val();
-    this.description = $('#location_description').val();
+    this.name = $('#location_name');
+    this.address = $('#location_address');
+    this.address_detail = $('#location_address_detail');
+    this.city = $('#location_city');
+    this.state = $('#location_state');
+    this.zipcode = $('#location_zipcode');
+    this.description = $('#location_description');
     this.listenTo(this.model, "invalid", this.displayErrors);
   },
   show: function(){
@@ -45,13 +47,13 @@ App.Views.LocationForm = Backbone.View.extend({
   },
   getAttributes: function(){
     return {
-      name: this.name,
-      address: this.address,
-      address_detail: this.address_detail,
-      city: this.city,
-      state: this.state,
-      zipcode: this.zipcode,
-      description: this.description
+      name: this.name.val(),
+      address: this.address.val(),
+      address_detail: this.address_detail.val(),
+      city: this.city.val(),
+      state: this.state.val(),
+      zipcode: this.zipcode.val(),
+      description: this.description.val()
     }
   },
   displayErrors: function(){
