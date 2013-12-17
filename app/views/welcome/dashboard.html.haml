@@ -1,3 +1,5 @@
+= javascript_include_tag "./dashboard/dashboard_app"
+= javascript_include_tag "http://code.highcharts.com/highcharts.js"
 %h1 This is the Dashboard Template that will be filled in with a user's details (using Backbone.js)
 
 
@@ -11,7 +13,7 @@ Timer
 
 
 Summary Graph
-%figure#summary-data
+%figure#chart
 %script#summary-template.detail{ type: "text/x-handlebars-template"}  
 	Name: = name
 
