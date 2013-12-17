@@ -1,6 +1,7 @@
 App.Router = Backbone.Router.extend({
   routes: {
     ""          : "index"
+    // "new"       : "new"
   },
 
   initialize: function(){

@@ -12,40 +12,49 @@
 / Make the form hidden, and toggle it when "Add Locaion" button is clicked
 / {style: "display: none;"} <- add that to form so it is hidden until you click
 / #location_form{style: "display: none;"}
+#main
+  .side_nav.three.columns
+  %nav
+    %ul
+      %li
+        %a{href: "/dashboard"} Dashboard
+      %li
+        %a{href: "/"} Locations
+      %li#add_location
+        %a{href: "#"} Add Location
+  #location_form{style: "display: none;"}
+    = form_for(Location.new) do |f|
+      %p
+        = f.label :name, "Location name"
+        %br
+        = f.text_field :name
+      %p
+        = f.label :address
+        %br
+        = f.text_field  :address
+      %p
+        = f.label :address_detail, "Suite/Floor"
+        %br
+        = f.text_field :address_detail
+      %p
+        = f.label :city
+        %br
+        = f.text_field :city
+      %p
+        = f.label :state
+        %br
+        = f.text_field :state
+      %p
+        = f.label :zipcode, "Zip"
+        %br
+        = f.text_field :zipcode
+      %p
+        = f.label :description
+        %br
+        = f.text_field :description
+      %p.button#create_location
+        = f.submit 'Create Location'
 
-#location_form{style: "display: none;"}
-  = form_for(Location.new) do |f|
-    %p
-      = f.label :name, "Location name"
-      %br
-      = f.text_field :name
-    %p
-      = f.label :address
-      %br
-      = f.text_field  :address
-    %p
-      = f.label :address_detail, "Suite/Floor"
-      %br
-      = f.text_field :address_detail
-    %p
-      = f.label :city
-      %br
-      = f.text_field :city
-    %p
-      = f.label :state
-      %br
-      = f.text_field :state
-    %p
-      = f.label :zipcode, "Zip"
-      %br
-      = f.text_field :zipcode
-    %p
-      = f.label :description
-      %br
-      = f.text_field :description
-    %p.button#create_location
-      = f.submit 'Create Location'
-#view_locations_form
 #errors
 #locations
 #detail

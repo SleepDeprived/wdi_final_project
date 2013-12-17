@@ -3,6 +3,6 @@ App.Collections.Locations = Backbone.Collection.extend({
   model: App.Models.Location,
   initialize: function(){
     this.fetch();
-    debugger;
+    // debugger;
   }
 });
