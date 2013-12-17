@@ -21,6 +21,8 @@ Dashboard.Views.SummariesView = Backbone.View.extend({
   	// looping through each model in the collection to pull the data element to populate the array that highcharts can display
     // move this to the collection
     // replace with this.collection.foo
+    var exercisesJSON = this.collection.toJSON();
+    debugger;
     // this.collection.each(function(currentModel){
     // 	var modelData = currentModel.get('data');
     // 	this.allData.push(modelData);
@@ -31,10 +33,12 @@ Dashboard.Views.SummariesView = Backbone.View.extend({
           type: 'column'
         },
         title: {
-          text: 'Editors At Seattle.rb'
+          text: 'Daily GitHub Commits'
         },
         yAxis : {
-          title: { text: "Number of People" }
+          title: { text: "Number of Commits" },
+          gridLineWidth: 0,
+          minorGridLineWidth: 0,
         },
         xAxis : {
           categories: 
@@ -43,8 +47,8 @@ Dashboard.Views.SummariesView = Backbone.View.extend({
              "other"]
         },
         series: [{
-          name: "Editors",
-          data: [10, 5, 3]  //this.allData
+          name: "Days over the past year",
+          data: [30, 5, 17, 18, 4, 22, 11, 10, 3, 9, 41, 20]  //this.allData
         }]
       });
     });

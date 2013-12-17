@@ -1,5 +1,5 @@
 Dashboard.Collections.Summaries = Backbone.Collection.extend({
-  url: "/dashboard",
+  url: "/github",
 
   model: Dashboard.Models.Summary,
   
