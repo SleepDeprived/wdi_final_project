@@ -1,5 +1,5 @@
 Project.Collections.Summaries = Backbone.Collection.extend({
-  url: "/github",
+  url: "/dashboard",
   model: Project.Models.Summary,
   initialize: function(){
     this.fetch();

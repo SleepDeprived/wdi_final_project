@@ -1,7 +1,7 @@
 App.Router = Backbone.Router.extend({
   routes: {
     ""          : "index",
-    "new"       : "new"
+    "dashboard"       : "dashboard"
   },
   initialize: function(){
     Backbone.history.start();
@@ -24,6 +24,7 @@ App.Router = Backbone.Router.extend({
   // summary graph on the dashboard when it loads
   dashboard: function(){
     console.log('dashboard');
+    // debugger;
     // summary will provide an overview of commits
     // initial version will be for a week
     // Creates the collection to be passed into the view
