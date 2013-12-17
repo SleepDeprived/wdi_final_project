@@ -1,10 +1,14 @@
 Dashboard.Collections.Summaries = Backbone.Collection.extend({
-  url: "/dashboard",
+  url: "/github",
 
   model: Dashboard.Models.Summary,
   
   initialize: function(){
-    this.fetch();
+    this.fetch({
+    	success: function(response) {
+    		console.log(response);
+    	}
+    });
   }
 
   // main fetch should pull granular version of commit data
