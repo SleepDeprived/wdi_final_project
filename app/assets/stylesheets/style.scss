@@ -4,6 +4,7 @@
 
 $side-nav: #00BEB6;
 $white: #ffffff;
+$button-color: #ca6612;
 
 
 // =============================================================
@@ -17,11 +18,11 @@ $white: #ffffff;
   a {
     text-decoration: none;
     font-family: Helvetica;
-    background: #cf402c;
+    background: $button-color;
     color: $white;
     padding: 10px;
     &:hover {
-      background: #e34630;
+      background: darken($button-color, 4%);
     }
   }
 }
@@ -35,9 +36,9 @@ $white: #ffffff;
   li a {
     text-decoration: none;
     font-family: Helvetica;
-    color: yellow;
+    color: $white;
     &:hover {
-    color: blue;
+    color: darken($button-color, 4%);
     }
   }
 }
@@ -61,13 +62,11 @@ input {
 }
 
 input[type="submit"] {
-  background: #cf402c;
+  background: $button-color;
   color: $white;
-}
-
-input[type="submit"]:hover {
-  background: #e34630;
-  color: $white;
+  &:hover {
+    background: darken($button-color, 4%);
+  }
 }
 
 
