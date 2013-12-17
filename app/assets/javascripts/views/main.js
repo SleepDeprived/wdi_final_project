@@ -1,5 +1,5 @@
 App.Views.Main = Backbone.View.extend({
-  el: "#main",
+  el: "#side_nav",
 
   events: {
     "click #add_location"  : "showForm"

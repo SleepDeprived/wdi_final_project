@@ -1,59 +1,63 @@
-%h1 Developer Productivity App
-%p this is the homepage that will show a list of locations that a developer can work at, as well as current devs working at those locations
-%p it will also show some github analytics
-
-- if current_user
-  %a{:href => "/github", :title => "Test github_call"} Test
-
-%br
-
-/ %button#add_location Add Location
-
 / Make the form hidden, and toggle it when "Add Locaion" button is clicked
 / {style: "display: none;"} <- add that to form so it is hidden until you click
 / #location_form{style: "display: none;"}
-#main
-  .side_nav.three.columns
+#side_nav
+  .four.columns
   %nav
     %ul
       %li
         %a{href: "/dashboard"} Dashboard
+      %br
       %li
         %a{href: "/"} Locations
+      %br
       %li#add_location
         %a{href: "#"} Add Location
+      %br
   #location_form{style: "display: none;"}
     = form_for(Location.new) do |f|
       %p
-        = f.label :name, "Location name"
+        = f.label :name, style: "display: none;"
         %br
-        = f.text_field :name
+        = f.text_field :name, :placeholder => "Location Name"
       %p
-        = f.label :address
+        = f.label :address, style: "display: none;"
         %br
-        = f.text_field  :address
+        = f.text_field  :address, :placeholder => "Address"
       %p
-        = f.label :address_detail, "Suite/Floor"
+        = f.label :address_detail, style: "display: none;"
         %br
-        = f.text_field :address_detail
+        = f.text_field :address_detail, :placeholder => "Suite/Floor"
       %p
-        = f.label :city
+        = f.label :city, style: "display: none;"
         %br
-        = f.text_field :city
+        = f.text_field :city, :placeholder => "City"
       %p
-        = f.label :state
+        = f.label :state, style: "display: none;"
         %br
-        = f.text_field :state
+        = f.text_field :state, :placeholder => "State"
       %p
-        = f.label :zipcode, "Zip"
+        = f.label :zipcode, style: "display: none;"
         %br
-        = f.text_field :zipcode
+        = f.text_field :zipcode, :placeholder => "Zip"
       %p
-        = f.label :description
+        = f.label :description, style: "display: none;"
         %br
-        = f.text_field :description
+        = f.text_field :description, :placeholder => "Description"
+      %br
+      %br
       %p.button#create_location
         = f.submit 'Create Location'
+
+#main.eight.columns
+  %h1 Developer Productivity App
+  %p this is the homepage that will show a list of locations that a developer can work at, as well as current devs working at those locations
+  %p it will also show some github analytics
+
+  - if current_user
+    %a{:href => "/github", :title => "Test github_call"} Test
+
+  %br
 
 #errors
 #locations

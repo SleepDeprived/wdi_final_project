@@ -2,12 +2,73 @@
 // VARIABLES
 // =============================================================
 
+$side-nav: #00BEB6;
+$white: #ffffff;
 
 
+// =============================================================
+// Login/Logout/Side Nav
+// =============================================================
 
+#user_nav {
+  float: right;
+  height: 100px;
+  margin-top: 20px;
+  a {
+    text-decoration: none;
+    font-family: Helvetica;
+    background: #cf402c;
+    color: $white;
+    padding: 10px;
+    &:hover {
+      background: #e34630;
+    }
+  }
+}
 
+#side_nav {
+  float: left;
+  height: 600px;
+  background: $side-nav;
+  padding-top: 50px;
+  text-align: center;
+  li a {
+    text-decoration: none;
+    font-family: Helvetica;
+    color: yellow;
+    &:hover {
+    color: blue;
+    }
+  }
+}
 
+#main {
+  float: left;
+  margin-top: 50px;
+  font-family: Helvetica, Arial, sans-serif;
+  h1 {
+    font-size: 24px;
+  }
+}
 
+input {
+  border: 0;
+  padding: 5px;
+  width: 200px;
+  font-size: 18px;
+  background: $white;
+  color: #8c8c8c;
+}
+
+input[type="submit"] {
+  background: #cf402c;
+  color: $white;
+}
+
+input[type="submit"]:hover {
+  background: #e34630;
+  color: $white;
+}
 
 
 
