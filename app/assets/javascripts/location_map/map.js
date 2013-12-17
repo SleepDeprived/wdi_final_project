@@ -54,7 +54,6 @@ googleMap.addPin = function() {
 googleMap.showPosition = function(position) {
   loc["latitude"] = position.coords.latitude;
   loc["longitude"] = position.coords.longitude;
-  debugger;
   googleMap.createMap();
   googleMap.addPin();
 }
