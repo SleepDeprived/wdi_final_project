@@ -11,6 +11,16 @@ Timer
 	=submit_tag "Start Timer", id: "start_timer_button"
 	%p#timer
 
+#sitting
+	Session
+	%p#current-sitting-location
+		Current Location
+	#sitting-button
+		%button#start-sitting-button
+			Start Session
+		%button#end-sitting-button
+			End Session
+	%p#sitting-duration
 
 Summary Graph
 %figure#chart
