@@ -1,3 +1,5 @@
+<%= javascript_include_tag "./location_map/location_map" %>
+
 <%= form_tag locations_path, :method => :get do %>
   <p>
     <%= text_field_tag :search, params[:search] %>

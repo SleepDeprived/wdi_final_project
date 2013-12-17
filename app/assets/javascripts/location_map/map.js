@@ -23,6 +23,18 @@ googleMap.getLocation = function() {
   }
 };
 
+googleMap.getLocations = function() {
+  $.ajax({
+    dataType: "json",
+    type: "GET",
+    url: "/locations"
+  }).done(function(data){
+    debugger;
+    locs = data;
+    console.log(data);
+  });
+};
+
 // creates a map around the location after dom load
 googleMap.createMap = function() {
 
@@ -60,6 +72,14 @@ googleMap.showPosition = function(position) {
 
 $(document).ready(function(){
   googleMap.getLocation();
+  googleMap.getLocations();
+
+  if (locs.locations.length > 0 && window.location.pathname === '/') {
+    for (i=0; i<locs.locations.length; i++) {
+      var location = locs[i];
+        googleMap.addPin(location);
+      }
+    }
 });
 
 

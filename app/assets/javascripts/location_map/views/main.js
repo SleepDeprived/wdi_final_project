@@ -26,10 +26,10 @@ App.Views.LocationForm = Backbone.View.extend({
     this.description = $('#location_description');
     this.listenTo(this.model, "invalid", this.displayErrors);
   },
-  // show: function(){
-  //   this.$el.show();
-  // },
   createLocation: function(e){
+    // need to prevent default so validations work
+    // but not redirecting to the "show" page
+    // e.preventDefault();
     console.log("form submitted");
     this.model.set( this.getAttributes() );
     if (this.model.isValid()){
