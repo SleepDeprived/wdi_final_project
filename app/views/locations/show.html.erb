@@ -1,3 +1,29 @@
-<%= @location.name %>
-<%= @location.address %>
-<%= @location.city %>
+<%= javascript_include_tag "./location_map/location_map" %>
+
+Name: <%= @location.name %>
+Address: <%= @location.address %>
+Suite/Floor/Apt: <%= @location.address_detail %>
+City: <%= @location.city %>
+State: <%= @location.state %>
+Zip: <%= @location.zipcode %>
+Description: <%= @location.description %>
+
+<button>Edit</button>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div class="gmap-container">
+  <div id="gmap-canvas"></div>
+</div>
+
+<h3>Locations near <%= @location.name %>:</h3>
+<ul>
+<% for location in @location.nearbys(10) %>
+  <li><%= link_to location.address, location %> (<%= location.distance %> miles)</li>
+<% end %>
+</ul>

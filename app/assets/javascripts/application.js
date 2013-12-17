@@ -18,4 +18,3 @@
 //= require underscore
 //= require backbone
 //= require moment
-

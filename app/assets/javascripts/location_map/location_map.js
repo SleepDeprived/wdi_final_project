@@ -18,4 +18,5 @@
 //= require_tree ./views
 //= require_tree ./features
 //
+//= require ./map
 //= require ./app

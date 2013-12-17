@@ -10,7 +10,7 @@
 
   <div class="container">
 
-    <div id="user_nav" class="column omega">
+    <div id="user_nav">
       <% if current_user %>
         Welcome, <%= current_user.github_username %>!
         <%= link_to "Sign Out", signout_path %>
@@ -26,6 +26,8 @@
 
 </div>
 <!-- container end -->
+
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=<% ENV['GOOGLE_API_KEY'] %>&sensor=true"></script>
 
 </body>
 </html>

@@ -2,7 +2,7 @@
 // VARIABLES
 // =============================================================
 
-$side-nav: #00BEB6;
+$side-nav: #2F7ED8;
 $white: #ffffff;
 $button-color: #ca6612;
 
@@ -98,6 +98,19 @@ input[type="submit"] {
   &:hover {
     background: darken($button-color, 4%);
   }
+}
+
+.gmap-container {
+  height: 300px;
+  width: 500px;
+  margin: 0 auto;
+}
+
+#gmap-canvas {
+  height: 300px;
+  width: 500px;
+  margin: 50px auto;
+
 }
 
 

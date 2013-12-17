@@ -1,19 +1,11 @@
 App.Views.Main = Backbone.View.extend({
   el: "#side_nav",
 
-  events: {
-    "click #add_location"  : "showForm"
-  },
-
   initialize: function(){
     console.log("initialized main.js");
     this.locationForm = new App.Views.LocationForm({model: this.model});
   },
 
-  showForm: function(e){
-    console.log("show form");
-    this.locationForm.show();
-  }
 });
 
 App.Views.LocationForm = Backbone.View.extend({
@@ -34,11 +26,10 @@ App.Views.LocationForm = Backbone.View.extend({
     this.description = $('#location_description');
     this.listenTo(this.model, "invalid", this.displayErrors);
   },
-  show: function(){
-    this.$el.show();
-  },
+  // show: function(){
+  //   this.$el.show();
+  // },
   createLocation: function(e){
-    e.preventDefault();
     console.log("form submitted");
     this.model.set( this.getAttributes() );
     if (this.model.isValid()){
