@@ -22,7 +22,7 @@ Dashboard.Views.SummariesView = Backbone.View.extend({
     // move this to the collection
     // replace with this.collection.foo
     var exercisesJSON = this.collection.toJSON();
-    debugger;
+    // debugger;
     // this.collection.each(function(currentModel){
     // 	var modelData = currentModel.get('data');
     // 	this.allData.push(modelData);
