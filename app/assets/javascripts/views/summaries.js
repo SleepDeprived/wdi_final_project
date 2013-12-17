@@ -14,6 +14,8 @@ Project.Views.SummariesView = Backbone.View.extend({
   render: function(){
 
   	// looping through each model in the collection to pull the data element to populate the array that highcharts can display
+    // move this to the collection
+    // replace with this.collection.foo
     this.collection.each(function(currentModel){
     	var modelData = currentModel.get('data');
     	this.allData.push(modelData);

@@ -10,7 +10,7 @@ class WelcomeController < ApplicationController
   def github
     @github = current_user.github_call
     render json: @github
-    binding.pry
+    # binding.pry
     # SELECTIVELY RENDER FROM JSON
     # response = github.to_json({:only => :sha })
     # render json: response 

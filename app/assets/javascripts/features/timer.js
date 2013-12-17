@@ -47,7 +47,8 @@ function timer() {
 
 // var phrases = [
 // "You don't want to lose all of your valuable work!",
-// "I pity the fool who doesn't commit"
+// "I pity the fool who doesn't commit",
+// "I've got 99 problems but commits ain't one"
 // ]
 
 // ------------------------------------------------------------------
