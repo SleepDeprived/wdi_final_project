@@ -56,8 +56,14 @@ $button-color: #ca6612;
 }
 
 
+// session / sitting buttons----------------
+#start-sitting-button{
+  display: show;
+}
 
-
+#end-sitting-button{
+  display: none;
+}
 
 
 

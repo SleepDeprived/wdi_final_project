@@ -20,10 +20,3 @@ Description: <%= @location.description %>
 <div class="gmap-container">
   <div id="gmap-canvas"></div>
 </div>
-
-<h3>Locations near <%= @location.name %>:</h3>
-<ul>
-<% for location in @location.nearbys(10) %>
-  <li><%= link_to location.address, location %> (<%= location.distance %> miles)</li>
-<% end %>
-</ul>
