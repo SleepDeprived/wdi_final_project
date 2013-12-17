@@ -8,7 +8,9 @@ class WelcomeController < ApplicationController
   end
 
   def github
-    @github = current_user.github_call
+    # @github = current_user.github_call
+
+    @github = {commits: [30, 5, 17, 18, 4, 22, 11, 10, 3, 9, 41, 2], weeks: [1, 2, 3, 4 , 5]}
     render json: @github
     # binding.pry
     # SELECTIVELY RENDER FROM JSON

@@ -17,7 +17,7 @@ Dashboard.Router = Backbone.Router.extend({
     // Creates the collection to be passed into the view
     var summary = new Dashboard.Collections.Summaries();
     // Creates the view that will be appended to the page
-    new Dashboard.Views.SummariesView({collection: summary});
+    Dashboard.dash = new Dashboard.Views.SummariesView({collection: summary});
   }
 
 });
