@@ -28,10 +28,10 @@ Dashboard.endSitting = function () {
 		// optional for MVP
 			// detect if the commit clock is on the page
 			// detect the time value in the commit clock
-	// capture the 
+	// capture the
 
 
-// to end a sitting I need to: 
+// to end a sitting I need to:
 
 // get the current location_id
 	// have an issue with asynchronous return
@@ -43,9 +43,9 @@ Dashboard.getLocation = function(){
 Dashboard.showPosition = function(position) {
 	Dashboard.loc = {};
   Dashboard.loc["latitude"] = Math.round(position.coords.latitude * 10000000) / 10000000;
-  Dashboard.loc["longitude"] = Math.round(position.coords.longitude * 10000000) / 10000000; 
+  Dashboard.loc["longitude"] = Math.round(position.coords.longitude * 10000000) / 10000000;
   Dashboard.findLocation(Dashboard.loc)
-  debugger;
+  // debugger;
 }
 
 Dashboard.findLocation = function(coordinates) {
@@ -62,9 +62,9 @@ Dashboard.findLocation = function(coordinates) {
       loc = response;
       console.log(response);
       $("#current-sitting-location").text(response.address).data("id", "response.id")
-      debugger;
+      // debugger;
       }
-  }); 
+  });
 }
 
 

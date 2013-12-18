@@ -2,14 +2,16 @@
 // VARIABLES
 // =============================================================
 
-$side-nav: #2F7ED8;
+$blue: #2F7ED8;
 $white: #ffffff;
+$light-gray: rgba(0,0,0,.2);
 $button-color: #ca6612;
 
 
 // =============================================================
 // Application.html.haml
 // =============================================================
+
 
 #login_nav {
   float: right;
@@ -18,29 +20,35 @@ $button-color: #ca6612;
   a {
     text-decoration: none;
     font-family: Helvetica;
-    background: $button-color;
+    background: $blue;
     color: $white;
     padding: 10px;
     &:hover {
-      background: darken($button-color, 4%);
+      background: darken($blue, 4%);
     }
   }
+}
+
+.github {
+  background: url("../img/iconmonstr-github-9-icon-32.png") no-repeat;
 }
 
 #side_nav {
   float: left;
   height: 600px;
-  background: $side-nav;
+  background: $white;
   padding-top: 50px;
-  text-align: center;
+  text-align: left;
   li {
-    margin: 20px;
+    margin: 50px;
+    font-size: 18px;
     a {
       text-decoration: none;
-      font-family: Helvetica;
-      color: $white;
+      font-family: Gudea;
+      text-transform: uppercase;
+      color: $blue;
       &:hover {
-      color: darken($button-color, 4%);
+      color: darken($blue, 10%);
       }
     }
   }
@@ -79,16 +87,16 @@ $button-color: #ca6612;
 
 
 // =============================================================
-// Location_map
+// Homepage view
 // =============================================================
 
 
 #main {
-  float: left;
   margin-top: 50px;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: Gudea, Arial, sans-serif;
   h1 {
-    font-size: 24px;
+    font-size: 36px;
+    margin: 20px auto;
   }
 }
 
@@ -97,32 +105,52 @@ input {
   padding: 5px;
   width: 200px;
   font-size: 18px;
-  background: $white;
+  background: $light-gray;
   color: #8c8c8c;
 }
 
 input[type="submit"] {
-  background: $button-color;
+  background: $blue;
   color: $white;
   &:hover {
-    background: darken($button-color, 4%);
+    background: darken($blue, 10%);
   }
 }
 
 .gmap-container {
-  height: 300px;
-  width: 500px;
+  height: 400px;
+  width: 600px;
   margin: 0 auto;
 }
 
 #gmap-canvas {
-  height: 300px;
-  width: 500px;
+  height: 400px;
+  width: 600px;
   margin: 50px auto;
+}
 
+// =============================================================
+// Locations show view
+// =============================================================
+
+#location_view {
+  font-family: Gudea;
+  font-size: 16px;
+  margin: 10px;
+  span {
+    margin: 10px;
+    font-weight: bold;
+  }
 }
 
 
-
-
-
+#edit-location-button {
+  font-family: Helvetica;
+  background: $blue;
+  color: $white;
+  padding: 10px;
+  width: 50px;
+  &:hover {
+    background: darken($blue, 4%);
+  }
+}
