@@ -1,19 +1,23 @@
 Dashboard.beginSitting = function() {
 	Dashboard.settings = {}
+	Dashboard.getLocation();
 	$("#start-sitting-button").hide();
 	$("#end-sitting-button").show();
 	// $("#end-sitting-button").data(); THIS IS GOING TO BE THE RECORD ID OF THE NEW SITTING CREATED
 	if ($("#timer_toggle").val() === 1) {
 		Dashboard.settings["commit_clock_on"] = true;
-		Dashboard.settings["commit_clock_duration"] = $("#time").val()
+		Dashboard.settings["commit_clock_duration"] = $("#time").val();
+	} else {
+		Dashboard.settings["commit_clock_on"] = false;
+		Dashboard.settings["commit_clock_duration"] = null;
 	}
 
 
 }
 
 Dashboard.endSitting = function () {
-	$("#end-sitting-button").hide();
 	$("#start-sitting-button").show();
+	$("#end-sitting-button").hide();
 }
 
 
@@ -29,30 +33,43 @@ Dashboard.endSitting = function () {
 
 // to end a sitting I need to: 
 
-
-
 // get the current location_id
 	// have an issue with asynchronous return
 
 Dashboard.getLocation = function(){
-	Dashboard.loc = {};
 	Dashboard.current_location = navigator.geolocation.getCurrentPosition(Dashboard.showPosition);
-
 }
 
-
 Dashboard.showPosition = function(position) {
-	  Dashboard.loc["latitude"] = position.coords.latitude;
-	  Dashboard.loc["longitude"] = position.coords.longitude;
+	Dashboard.loc = {};
+  Dashboard.loc["latitude"] = Math.round(position.coords.latitude * 10000000) / 10000000;
+  Dashboard.loc["longitude"] = Math.round(position.coords.longitude * 10000000) / 10000000; 
+  Dashboard.findLocation(Dashboard.loc)
+  debugger;
 }
 
 Dashboard.findLocation = function(coordinates) {
 	$.ajax({
       dataType: "json",
       type: "GET",
-      url: "/find_location?coordinates"
-    }).done(function(data){
-      loc = data;
-      console.log(data);
+      url: "/location?coordinates"
+    }).done(function(response){
+    	if (response.address === "") {
+    		// alert("Please add your location!")
+	     window.webkitNotifications.createNotification('rails.png', "We can't find your location", "Please add your location.").show();
+	     // make a bunch of different commit messages and sample them -- purely to keep people intereted in reading the messages
+    	} else {
+      loc = response;
+      console.log(response);
+      $("#current-sitting-location").text(response.address).data("id", "response.id")
+      debugger;
+      }
   }); 
 }
+
+
+// HOW TO SOLVE THE ISSUE THAT THE LAT/LONG DOESN'T MATCH ON SEARCH
+	// reverse search for address using lat/long
+
+
+
