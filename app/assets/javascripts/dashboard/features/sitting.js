@@ -6,15 +6,18 @@ Dashboard.beginSitting = function() {
 	// $("#end-sitting-button").data(); THIS IS GOING TO BE THE RECORD ID OF THE NEW SITTING CREATED
 	if ($("#timer_toggle").val() === 1) {
 		Dashboard.settings["commit_clock_on"] = true;
-		Dashboard.settings["commit_clock_duration"] = $("#time").val()
+		Dashboard.settings["commit_clock_duration"] = $("#time").val();
+	} else {
+		Dashboard.settings["commit_clock_on"] = false;
+		Dashboard.settings["commit_clock_duration"] = null;
 	}
 
 
 }
 
 Dashboard.endSitting = function () {
-	$("#end-sitting-button").hide();
 	$("#start-sitting-button").show();
+	$("#end-sitting-button").hide();
 }
 
 
@@ -49,7 +52,7 @@ Dashboard.findLocation = function(coordinates) {
 	$.ajax({
       dataType: "json",
       type: "GET",
-      url: "/find_location?coordinates"
+      url: "/location?coordinates"
     }).done(function(response){
     	if (response.address === "") {
     		// alert("Please add your location!")
@@ -63,3 +66,10 @@ Dashboard.findLocation = function(coordinates) {
       }
   }); 
 }
+
+
+// HOW TO SOLVE THE ISSUE THAT THE LAT/LONG DOESN'T MATCH ON SEARCH
+	// reverse search for address using lat/long
+
+
+
