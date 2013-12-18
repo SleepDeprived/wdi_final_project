@@ -47,6 +47,10 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'debugger'
 
+group :test do
+  gem 'shoulda-matchers'
+end
+
 group :development, :test do
   gem "rspec-rails"
   gem "guard-rspec"
