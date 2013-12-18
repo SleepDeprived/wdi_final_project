@@ -30,6 +30,7 @@ FinalProject::Application.routes.draw do
   get "/github" => "welcome#github"
 
   resources :sittings, only: [:create, :update, :show]
+  get "/location_by_coords" => "sittings#location_by_coords"
 
   resources :locations
 

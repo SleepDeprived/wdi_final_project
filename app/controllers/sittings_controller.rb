@@ -1,8 +1,7 @@
 class SittingsController < ApplicationController
 
 	def show
-		@current_location = Location.where(latitude: params[:coordinates], longitude: params[:coordinates]).first
-    render json: @current_location
+
 	end
 
 	def create
@@ -14,6 +13,12 @@ class SittingsController < ApplicationController
 	def update
 		
 	end
+
+  def location_by_coords
+    binding.pry
+    @current_location = Location.where(latitude: params[:latitude], longitude: params[:longitude]).first
+    render json: @current_location
+  end
 
 end
 

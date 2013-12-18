@@ -1,6 +1,7 @@
 Dashboard.beginSitting = function() {
-	Dashboard.settings = {}
-	Dashboard.getLocation();
+	Dashboard.settings = {};
+	// debugger;
+	// Dashboard.getLocation();
 	$("#start-sitting-button").hide();
 	$("#end-sitting-button").show();
 	// $("#end-sitting-button").data(); THIS IS GOING TO BE THE RECORD ID OF THE NEW SITTING CREATED
@@ -42,17 +43,18 @@ Dashboard.getLocation = function(){
 
 Dashboard.showPosition = function(position) {
 	Dashboard.loc = {};
-  Dashboard.loc["latitude"] = Math.round(position.coords.latitude * 10000000) / 10000000;
-  Dashboard.loc["longitude"] = Math.round(position.coords.longitude * 10000000) / 10000000; 
-  Dashboard.findLocation(Dashboard.loc)
-  debugger;
+  Dashboard.loc["latitude"] = position.coords.latitude  // Math.round(position.coords.latitude * 10000000) / 10000000;
+  Dashboard.loc["longitude"] = position.coords.longitude  // Math.round(position.coords.longitude * 10000000) / 10000000; 
+  Dashboard.position_string = "latitude=" + Dashboard.loc["latitude"] + "&longitude=" + Dashboard.loc["longitude"];
+  Dashboard.findLocation(Dashboard.position_string);
 }
 
-Dashboard.findLocation = function(coordinates) {
+Dashboard.findLocation = function(string) {
+      debugger;
 	$.ajax({
       dataType: "json",
       type: "GET",
-      url: "/location?coordinates"
+      url: "/location_by_coords?" + string
     }).done(function(response){
     	if (response.address === "") {
     		// alert("Please add your location!")
@@ -62,7 +64,6 @@ Dashboard.findLocation = function(coordinates) {
       loc = response;
       console.log(response);
       $("#current-sitting-location").text(response.address).data("id", "response.id")
-      debugger;
       }
   }); 
 }

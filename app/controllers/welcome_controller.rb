@@ -13,6 +13,12 @@ class WelcomeController < ApplicationController
     render json: @github
   end
 
+  def location_by_coords
+    binding.pry
+    @current_location = Location.where(latitude: params[:latitude], longitude: params[:longitude]).first
+    render json: @current_location
+  end
+
   # def weekly_data
   #   # github_data should be github to refer to @github?
   #   organized_data = current_user.github_data.organize_by_week
