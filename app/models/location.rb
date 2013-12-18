@@ -12,4 +12,5 @@ class Location < ActiveRecord::Base
     [address, city, state, zipcode].compact.join(', ')
   end
 
+
 end

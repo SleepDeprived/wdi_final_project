@@ -13,7 +13,7 @@ $(document).ready(function(){
 	$('#start-sitting-button').on('click', Dashboard.beginSitting);
 	$('#end-sitting-button').on('click', Dashboard.endSitting);
 
-	Dashboard.getLocation(Dashboard.current_location);
+	Dashboard.getLocation();
 	// $('#current-sitting-location').
 
 });

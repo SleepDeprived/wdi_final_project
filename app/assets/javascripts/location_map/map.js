@@ -1,3 +1,17 @@
+$(document).ready(function(){
+  if (window.location.pathname === '/') {
+    Map.initHome();
+  } else {
+    Map.initShow();
+  }
+
+});
+
+
+// -----------------------
+// Creates map and puts locations on page
+// -----------------------
+
 // constructor
 // center is passed in to define the center of the map with latitude and longitude
 Map = function(center) {
@@ -59,10 +73,20 @@ Map.initHome = function() {
     // this actually uses the data that was pulled down from the getLocations function above
     // and loops through all locations in the database to add a pin for each
     Map.getLocations().done(function(locs) {
+
+      var locationsContainer = $("#nearby-location-container")
       for (var i=0; i<locs.length; i++) {
         var loc = locs[i];
         map.addPin(loc);
       }
+
+      var source   = $("#map-result").html();
+      var template = Handlebars.compile(source);
+      var context = {locations: locs}
+      var htmlGeneratedByHandlebars    = template(context);
+      debugger
+      $("#nearby-location-container").append(htmlGeneratedByHandlebars)
+
     });
   });
 }
@@ -77,16 +101,3 @@ Map.initShow = function() {
     map.addPin(loc);
   })
 }
-
-// dom ready
-// rendering a map with different data depending on whart page we land on
-// so need to run a different function whether we are on the homepage of locations show page
-$(document).ready(function(){
-  if (window.location.pathname === '/') {
-    Map.initHome();
-  } else {
-    Map.initShow();
-  }
-});
-
-
