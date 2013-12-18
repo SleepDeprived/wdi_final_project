@@ -50,3 +50,23 @@ l5 = Location.create(
       :description => 'coffee shop'
   )
 
+l6 = Location.create(
+      :name => "New York Public Library at Bryant Park",
+      :address => '461 Fifth Avenue',
+      :address_detail => '',
+      :city => 'New York',
+      :state => 'NY',
+      :zipcode => '10018',
+      :description => 'Library'
+  )
+
+l7 = Location.create(
+      :name => "New York Public Library: East 67th Street",
+      :address => '328 East 67th Street',
+      :address_detail => '',
+      :city => 'New York',
+      :state => 'NY',
+      :zipcode => '10065',
+      :description => 'Library'
+  )
+
