@@ -10,38 +10,42 @@ $dark-gray: rgba(0,0,0,.6);
 $button-color: #ca6612;
 
 
+// test colors & attributes
+
+p {
+  background: pink;
+}
+
+#container {
+  background: yellow;
+}
+
 // =============================================================
 // Template (Application.html.haml)
 // =============================================================
-
-
-#login_nav {
-  float: right;
-  margin-top: 30px;
-  font-family: Gudea;
-  color: $black;
-  a {
-    text-decoration: none;
-    font-family: Gudea;
-    background: $blue;
-    color: $white;
-    padding: 10px;
-    border-radius: 4px;
-    &:hover {
-      background: darken($blue, 4%);
-    }
-  }
+body, #container, #side_nav {
+  height: 100%;
 }
+
+header {
+  margin: 25px;
+}
+
+aside{
+  height: 100%;
+  background: red;
+}
+
 
 .github {
   background: url("../img/iconmonstr-github-9-icon-32.png") no-repeat;
 }
 
 #side_nav {
-  float: left;
-  height: 600px;
+  // float: left;
+  // height: 100%;
   background: $white;
-  margin-top: 100px;
+  margin-top: 100px 50px;
   text-align: left;
   li {
     margin: 50px;
@@ -59,25 +63,40 @@ $button-color: #ca6612;
   }
 }
 
+#login_nav {
+  // margin-top: 30px;
+  font-family: Gudea;
+  color: $black;
+  a {
+    // float: right;
+    text-decoration: none;
+    display: inline-block;
+    font-family: Gudea;
+    background: $blue;
+    color: $white;
+    padding: 10px;
+    border-radius: 4px;
+    &:hover {
+      background: darken($blue, 4%);
+    }
+  }
+}
 // =============================================================
 // Homepage view
 // =============================================================
 
+h1 {
+  font-size: 36px;
+  margin: 0 auto;
+  color: $black;
+}
 
-#main {
-  margin-top: 20px;
-  font-family: Gudea, Arial, sans-serif;
-  h1 {
-    font-size: 36px;
-    margin: 0 auto;
-    color: $black;
-  }
-  p {
-    margin-top: 10px;
-    font-size: 18px;
+p {
+    // margin-top: 10px;
+    font-size: 16px;
     color: $dark-gray;
   }
-}
+
 
 input {
   border: 0;
@@ -96,6 +115,15 @@ input[type="submit"] {
   }
 }
 
+#main {
+  margin-top: 20px 0px;
+  font-family: Gudea, Arial, sans-serif;
+}
+
+.margin-display {
+  margin: 0 auto;
+  display: inline-block;
+}
 
 
 // =============================================================
@@ -132,15 +160,18 @@ input[type="submit"] {
 // =============================================================
 
 .gmap-container {
-  height: 400px;
-  width: 600px;
-  margin: 0 auto;
+  max-width: 100%;
+  min-width: 320px;
+  diplay: inline-block;
+  // width: 600px;
+  // margin: 0 auto;
 }
 
 #gmap-canvas {
-  height: 400px;
-  width: 600px;
-  margin: 50px auto;
+  height: 450px;
+  width: 680px;
+  display: inline-block;
+  // margin: 50px auto;
 }
 
 // =============================================================
@@ -167,6 +198,10 @@ input[type="submit"] {
   &:hover {
     background: darken($blue, 4%);
   }
+}
+
+#nearby-location-container {
+
 }
 
 

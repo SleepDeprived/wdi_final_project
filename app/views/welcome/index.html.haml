@@ -1,17 +1,13 @@
 = javascript_include_tag "./location_map/location_map"
 
-#main.eight.columns
-  %h1 DevelUp
-  %p Find coding-friendly locations nearby
-  %p Increase your productivity
-
-.gmap-container.eight.columns
-  #gmap-canvas
+.gmap-container.twelve.columns
+	#gmap-canvas
 
 #locations
 
 
-#nearby-location-container Nearby Locations
+#nearby-location-container.twelve.columns
+	Nearby Locations
 	
 
 /     %li.location{data: {id: "{{id}}" }}
