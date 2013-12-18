@@ -8,9 +8,18 @@
 </head>
 <body>
 
-  <div class="container">
+  <script id="map-result" type="text/x-handlebars-template">
+    {{#each locations}}
+      <div class="entry">
+        <h1>{{name}}</h1>
+        <div class="body">
+          {{description}}
+        </div>
+      </div>
+    {{/each }}
+  </script>
 
-
+  <div class="container"> 
 
     <div id="notice"></div>
 

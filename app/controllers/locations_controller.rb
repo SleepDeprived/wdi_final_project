@@ -82,13 +82,13 @@ class LocationsController < ApplicationController
   # end
 
 
-  # FINDS LOCATIONS NEAR CURRENT LOCATION AND RETURNS THEM TO BE DISPLAYED ON LOCATION PAGE
-  def nearby_locations
-    user_location = {latitude: params["latitude"], longitude: params["longitude"]}
-    binding.pry
-    @nearby_places = Location.near(user_location, 25, order: :distance)
-    render json: @nearby_places
-  end
+  # # FINDS LOCATIONS NEAR CURRENT LOCATION AND RETURNS THEM TO BE DISPLAYED ON LOCATION PAGE
+  # def nearby_locations
+  #   user_location = {latitude: params["latitude"], longitude: params["longitude"]}
+  #   binding.pry
+  #   @nearby_places = Location.near(user_location, 25, order: :distance)
+  #   render json: @nearby_places
+  # end
 
 
 

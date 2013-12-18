@@ -59,12 +59,25 @@
   - if current_user
     %a{:href => "/github", :title => "Test github_call"} Test
 
-  %br
+
 
 #locations
 #detail
 .gmap-container
   #gmap-canvas
+
+#nearby-location-container Nearby Locations
+	
+
+/     %li.location{data: {id: "{{id}}" }}
+/       %div
+/         %strong {{name}}
+/     {{/each}}
+
+
+
+
+
 
 = render partial: 'location'
 = render partial: 'detail'
