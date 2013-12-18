@@ -23,6 +23,16 @@ $(document).ready(function(){
     }
   });
 
+  // ================================================================
+// This function makes flash notices fade in and fade out
+// ================================================================
+
+$(function() {
+  $('#flash_notice').delay(500).fadeIn('normal', function() {
+    $(this).delay(2000).fadeOut();
+  });
+});
+
 });
 
 

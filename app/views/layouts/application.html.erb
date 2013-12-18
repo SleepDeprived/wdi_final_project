@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>FinalProject</title>
+  <title>DevelUp</title>
+  <link href='http://fonts.googleapis.com/css?family=Gudea' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -19,24 +20,31 @@
     {{/each }}
   </script>
 
-  <div class="container"> 
+  <div class="container">
 
-    <div id="notice"></div>
+    <div id="notice_container">
+      <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, id: "flash_#{name}" %>
+      <% end %>
+    </div>
 
     <div id="login_nav">
       <% if current_user %>
-        Welcome, <%= current_user.github_username %>!
+        Welcome, <%= current_user.github_username %>
         <%= link_to "Sign Out", signout_path %>
       <% else %>
         <%= link_to "Sign in with GitHub", "/auth/github" %>
       <% end %>
     </div>
-    <div id="side_nav">
+
+
+
+    <div id="side_nav" class="four columns">
       <div class="four columns">
         <nav>
           <ul>
-            <li><a href="/">Home</a></li>
             <% if current_user %>
+            <li><a href="/">Home</a></li>
             <li><a href="/dashboard">Dashboard</a></li>
             <li id="add_location"><a href="#">Add Location</a></li>
             <% end %>
@@ -46,19 +54,12 @@
 
       <div id="location_form" style="display: none;">
       <%= form_for(Location.new) do |f| %>
-        <%= f.label           :name %> <br>
         <%= f.text_field      :name, :placeholder => "Name" %> <br>
-        <%= f.label           :address %> <br>
         <%= f.text_field      :address, :placeholder => "Address" %> <br>
-        <%= f.label           :address_detail %> <br>
         <%= f.text_field      :address_detail, :placeholder => "Suite/Floor/Apt" %> <br>
-        <%= f.label           :city %> <br>
         <%= f.text_field      :city, :placeholder => "City" %> <br>
-        <%= f.label           :state %> <br>
         <%= f.text_field      :state, :placeholder => "State" %> <br>
-        <%= f.label           :zipcode %> <br>
         <%= f.text_field      :zipcode, :placeholder => "Zip" %> <br>
-        <%= f.label           :description %> <br>
         <%= f.text_field      :description, :placeholder => "Description" %> <br> <br>
         <!-- need to give submit an id of "create_location" -->
         <div id="create_location">
@@ -66,7 +67,6 @@
         </div>
       <% end %>
       </div>
-      <div id="errors"></div>
     </div>
 
 

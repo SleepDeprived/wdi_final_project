@@ -47,7 +47,7 @@ class LocationsController < ApplicationController
         format.html { redirect_to @location, notice: 'Location was successfully created.' }
         format.json { render json: @location, status: :created }
       else
-        format.html { render action: "new" }
+        format.html { redirect_to root_path, notice: 'Please fill in all fields!' }
         format.json { render json: @location.errors, status: :unprocessable_entity }
       end
     end
