@@ -16,10 +16,6 @@ describe Location do
       )
     end
 
-    it "adds a location to the database" do
-      expect(Location.all).to eq(1)
-    end
-
     it "can be created with name, address, city, state, and zipcode" do
       expect(loc).to be_true
     end

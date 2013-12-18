@@ -51,5 +51,10 @@ describe "The Home Page" do
     expect(page).to have_content("Sign Out")
   end
 
+  # it "has a form to create new location" do
+  #   find_link('Add Location').click
+  #   expect(page).to have_content('Create Location')
+  # end
+
 
 end
