@@ -1,24 +1,2 @@
-/ %script#locations-template{type:"text/x-handlebars-template"}
-/ %ul.authors
-/ = hb 'each devLocations' do
-/   %li<
-/     = succeed ',' do
-/       = hb 'name'
-/     = hb 'address'
 
-%script#locations-template{type:"text/x-handlebars-template"}
-  %ul#main
-    each locations
-    / %li.location {data: {id: = id }}
-    %li.location
-      %div
-        %strong = name
-
-/ %script#exercises-template{type:"text/x-handlebars-template"}
-/   %ul
-/     {{#each locations}}
-/     %li.location{data: {id: "{{id}}" }}
-/       %div
-/         %strong {{name}}
-/     {{/each}}
 

@@ -1,22 +1,24 @@
 <%= javascript_include_tag "./location_map/location_map" %>
 
-Name: <%= @location.name %>
-Address: <%= @location.address %>
-Suite/Floor/Apt: <%= @location.address_detail %>
-City: <%= @location.city %>
-State: <%= @location.state %>
-Zip: <%= @location.zipcode %>
-Description: <%= @location.description %>
+<div id="main" class="eight columns">
+  <h1>Name: <%= @location.name %></h1>
+</div>
 
-<button>Edit</button>
+<div id="location_view" class="six columns">
+  <br>
+  <span>Address:</span> <%= @location.address %> <br>
+  <span>Suite/Floor:</span> <%= @location.address_detail %> <br>
+  <span>City:</span> <%= @location.city %> <br>
+  <span>State:</span> <%= @location.state %> <br>
+  <span>Zip:</span> <%= @location.zipcode %> <br>
+  <span>Description:</span> <%= @location.description %> <br>
+
+  <button id="edit-location-button">Edit</button>
+</div>
+
 
 <br>
-<br>
-<br>
-<br>
-<br>
-<br>
 
-<div class="gmap-container">
+<div class="gmap-container eight columns">
   <div id="gmap-canvas"></div>
 </div>

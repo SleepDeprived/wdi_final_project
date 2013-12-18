@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   attr_accessible :email, :github_image, :github_username, :name, :oauth_expires_at, :oauth_token, :provider, :uid
-
+  has_many :locations, through: :sittings
+  has_many :sittings
   attr_accessor :github_data
 
   def self.create_with_omniauth(auth)
@@ -30,12 +31,12 @@ class User < ActiveRecord::Base
       # put the commits into an array of 365 days
       github_day_commits = repo_stats.map{ |obj| obj["days"] }.flatten
       # make an array of the weeks that span this year
-      github_weeks = repo_stats.map{ |obj| obj["week"] }.flatten 
+      github_weeks = repo_stats.map{ |obj| obj["week"] }.flatten
       # create an object in the commit_data array for each repo with the name of the repo and the commits and weeks arrays for that repo
       commit_data.push({repo: repo_array, commits_by_day: github_day_commits, weeks: github_weeks})
     end
-    daily_commits = commit_data[0][:commits_by_day].zip(commit_data[1][:commits_by_day], 
-                                                      commit_data[2][:commits_by_day], 
+    daily_commits = commit_data[0][:commits_by_day].zip(commit_data[1][:commits_by_day],
+                                                      commit_data[2][:commits_by_day],
                                                       commit_data[3][:commits_by_day],
                                                       commit_data[4][:commits_by_day],
                                                       commit_data[5][:commits_by_day],

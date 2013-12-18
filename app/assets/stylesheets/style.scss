@@ -2,47 +2,97 @@
 // VARIABLES
 // =============================================================
 
-$side-nav: #2F7ED8;
+$blue: #2F7ED8;
 $white: #ffffff;
+$black: rgba(0,0,0,.8);
+$light-gray: rgba(0,0,0,.2);
+$dark-gray: rgba(0,0,0,.6);
 $button-color: #ca6612;
 
 
 // =============================================================
-// Application.html.haml
+// Template (Application.html.haml)
 // =============================================================
+
 
 #login_nav {
   float: right;
-  height: 100px;
-  margin-top: 20px;
+  margin-top: 30px;
+  font-family: Gudea;
+  color: $black;
   a {
     text-decoration: none;
-    font-family: Helvetica;
-    background: $button-color;
+    font-family: Gudea;
+    background: $blue;
     color: $white;
     padding: 10px;
+    border-radius: 4px;
     &:hover {
-      background: darken($button-color, 4%);
+      background: darken($blue, 4%);
     }
   }
+}
+
+.github {
+  background: url("../img/iconmonstr-github-9-icon-32.png") no-repeat;
 }
 
 #side_nav {
   float: left;
   height: 600px;
-  background: $side-nav;
-  padding-top: 50px;
-  text-align: center;
+  background: $white;
+  margin-top: 100px;
+  text-align: left;
   li {
-    margin: 20px;
+    margin: 50px;
+    font-size: 18px;
     a {
       text-decoration: none;
-      font-family: Helvetica;
-      color: $white;
+      font-family: Gudea;
+      text-transform: uppercase;
+      color: $blue;
       &:hover {
-      color: darken($button-color, 4%);
+      background: $blue;
+      color: $white;
       }
     }
+  }
+}
+
+// =============================================================
+// Homepage view
+// =============================================================
+
+
+#main {
+  margin-top: 20px;
+  font-family: Gudea, Arial, sans-serif;
+  h1 {
+    font-size: 36px;
+    margin: 0 auto;
+    color: $black;
+  }
+  p {
+    margin-top: 10px;
+    font-size: 18px;
+    color: $dark-gray;
+  }
+}
+
+input {
+  border: 0;
+  padding: 5px;
+  width: 200px;
+  font-size: 18px;
+  background: $light-gray;
+  color: $dark-gray;
+}
+
+input[type="submit"] {
+  background: $blue;
+  color: $white;
+  &:hover {
+    background: darken($blue, 4%);
   }
 }
 
@@ -77,52 +127,66 @@ $button-color: #ca6612;
 
 
 
-
 // =============================================================
-// Location_map
+// Google Maps
 // =============================================================
-
-
-#main {
-  float: left;
-  margin-top: 50px;
-  font-family: Helvetica, Arial, sans-serif;
-  h1 {
-    font-size: 24px;
-  }
-}
-
-input {
-  border: 0;
-  padding: 5px;
-  width: 200px;
-  font-size: 18px;
-  background: $white;
-  color: #8c8c8c;
-}
-
-input[type="submit"] {
-  background: $button-color;
-  color: $white;
-  &:hover {
-    background: darken($button-color, 4%);
-  }
-}
 
 .gmap-container {
-  height: 300px;
-  width: 500px;
+  height: 400px;
+  width: 600px;
   margin: 0 auto;
 }
 
 #gmap-canvas {
-  height: 300px;
-  width: 500px;
+  height: 400px;
+  width: 600px;
   margin: 50px auto;
+}
 
+// =============================================================
+// Locations show view
+// =============================================================
+
+#location_view {
+  font-family: Gudea;
+  font-size: 16px;
+  margin: 10px;
+  span {
+    margin: 10px;
+    font-weight: bold;
+  }
+}
+
+
+#edit-location-button {
+  font-family: Helvetica;
+  background: $blue;
+  color: $white;
+  padding: 10px;
+  width: 50px;
+  &:hover {
+    background: darken($blue, 4%);
+  }
 }
 
 
 
+// =============================================================
+// Flash message
+// =============================================================
 
+#notice_container {
+  width: 100%;
+  margin: 0 auto;
+  background-color: #CFC;
+  text-align: center;
+  font-size: 20px;
+}
 
+#flash_notice {
+    padding: 5px 8px;
+    margin: 10px 0;
+    background-color: #CFC;
+    border: solid 1px #6C6;
+    text-align: center;
+}

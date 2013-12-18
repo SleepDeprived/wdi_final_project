@@ -1,12 +1,5 @@
 <%= javascript_include_tag "./location_map/location_map" %>
 
-<%= form_tag locations_path, :method => :get do %>
-  <p>
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search Near", :name => nil %>
-  </p>
-<% end %>
-
 <% @locations.each do |loc| %>
   <%= loc.name %> <br>
 <% end %>
