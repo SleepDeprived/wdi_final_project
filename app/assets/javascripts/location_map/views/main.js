@@ -30,6 +30,7 @@ App.Views.LocationForm = Backbone.View.extend({
     // e.preventDefault();
     console.log("form submitted");
     this.model.set( this.getAttributes() );
+    // don't need these because it is getting validated and saved already through rails
     // if (this.model.isValid()){
     //   this.model.save();
     // }

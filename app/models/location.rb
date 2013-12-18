@@ -5,6 +5,9 @@ class Location < ActiveRecord::Base
   geocoded_by :full_address
   after_validation :geocode, :if => :address_changed?
 
+  has_many :users, through: :sittings
+  has_many :sittings
+
   def full_address
     [address, city, state, zipcode].compact.join(', ')
   end
