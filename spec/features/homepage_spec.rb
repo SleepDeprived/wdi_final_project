@@ -4,6 +4,7 @@ describe "The Home Page" do
 
   before(:each) do
     visit '/'
+    find_link('Sign in with GitHub').click
   end
 
   it "has a title of 'DevelUp'" do
@@ -12,10 +13,6 @@ describe "The Home Page" do
 
   it "shows the title on the page" do
     expect(page).to have_content("DevelUp")
-  end
-
-  it "says 'Sign in with GitHub'" do
-    expect(page).to have_content("Sign in with GitHub")
   end
 
   it "says 'Home'" do
@@ -30,10 +27,9 @@ describe "The Home Page" do
     expect(page).to have_content("Add Location")
   end
 
-  it "has a link to /home" do
+  it "has a link to /" do
     find_link('Home').click
     expect(page).to have_content('Home')
-    # for now it will just go back to '/'
     expect(current_path).to eq('/')
   end
 
@@ -43,18 +39,17 @@ describe "The Home Page" do
     expect(current_path).to eq('/dashboard')
   end
 
-  it "has a link to GitHub to login" do
-    find_link('Sign in with GitHub').click
-    expect(current_path).to have_content("GitHub")
+  it "signs a user in" do
+    expect(page).to have_content("Welcome, jimmydavis")
   end
 
   it "has a map" do
     expect(page).to have_css('div#gmap-canvas')
   end
 
-  it "has a form to add a location" do
-    find_link('Add Location').click
-    expect(page).to have_css('form')
+  it "says 'Sign Out' when a user is logged in" do
+    expect(page).to have_content("Sign Out")
   end
+
 
 end
