@@ -1,55 +1,55 @@
 = javascript_include_tag "./location_map/location_map"
 
-#side_nav
-  .four.columns
-  %nav
-    %ul
-      %li
-        %a{href: "/dashboard"} Dashboard
+/ #side_nav
+/   .four.columns
+/   %nav
+/     %ul
+/       %li
+/         %a{href: "/dashboard"} Dashboard
 
-      %li
-        %a{href: "/"} Locations
+/       %li
+/         %a{href: "/"} Locations
 
-      %li#add_location
-        %a{href: "#"} Add Location
+/       %li#add_location
+/         %a{href: "#"} Add Location
 
 
 
-  #location_form{style: "display: none;"}
-    = form_for(Location.new) do |f|
-      %p
-        = f.label :name, style: "display: none;"
-        %br
-        = f.text_field :name, :placeholder => "Location Name"
-      %p
-        = f.label :address, style: "display: none;"
-        %br
-        = f.text_field  :address, :placeholder => "Address"
-      %p
-        = f.label :address_detail, style: "display: none;"
-        %br
-        = f.text_field :address_detail, :placeholder => "Suite/Floor"
-      %p
-        = f.label :city, style: "display: none;"
-        %br
-        = f.text_field :city, :placeholder => "City"
-      %p
-        = f.label :state, style: "display: none;"
-        %br
-        = f.text_field :state, :placeholder => "State"
-      %p
-        = f.label :zipcode, style: "display: none;"
-        %br
-        = f.text_field :zipcode, :placeholder => "Zip"
-      %p
-        = f.label :description, style: "display: none;"
-        %br
-        = f.text_field :description, :placeholder => "Description"
-      %br
-      %br
-      %p.button#create_location
-        = f.submit 'Create Location'
-    #errors
+/   #location_form{style: "display: none;"}
+/     = form_for(Location.new) do |f|
+/       %p
+/         = f.label :name, style: "display: none;"
+/         %br
+/         = f.text_field :name, :placeholder => "Location Name"
+/       %p
+/         = f.label :address, style: "display: none;"
+/         %br
+/         = f.text_field  :address, :placeholder => "Address"
+/       %p
+/         = f.label :address_detail, style: "display: none;"
+/         %br
+/         = f.text_field :address_detail, :placeholder => "Suite/Floor"
+/       %p
+/         = f.label :city, style: "display: none;"
+/         %br
+/         = f.text_field :city, :placeholder => "City"
+/       %p
+/         = f.label :state, style: "display: none;"
+/         %br
+/         = f.text_field :state, :placeholder => "State"
+/       %p
+/         = f.label :zipcode, style: "display: none;"
+/         %br
+/         = f.text_field :zipcode, :placeholder => "Zip"
+/       %p
+/         = f.label :description, style: "display: none;"
+/         %br
+/         = f.text_field :description, :placeholder => "Description"
+/       %br
+/       %br
+/       %p.button#create_location
+/         = f.submit 'Create Location'
+/     #errors
 
 #main.eight.columns
   %h1 Developer Productivity App
