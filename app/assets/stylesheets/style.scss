@@ -15,54 +15,8 @@ $button-color: #ca6612;
 // =============================================================
 
 
-.location-show {
-  width: 450px;
-  height: 500px;
-  float: left;
-}
-
-.info-location-name {
-  margin-top: 100px;
-  margin-left: 20px;
-  font-family: Gotham;
-  float: left;
-}
-
-/* section on left-hand side of page containing detailed information about a market*/
-#info-section {
-  width: 420px;
-  margin: 10px;
-  padding:0;
-  font-size: 16px;
-}
-
-/* class applied to each label that identifies the pieces of detailed information about the market*/
-.info-labels {
-  width: 150px;
-  text-align: right;
-  float: left;
-  padding-right: 10px;
-  color: rgba(0,0,0,.8);
-  font-family: Gotham;
-}
-
-/* class applied to each piece of detailed information about a single market*/
-.info-data {
-  width: 250px;
-  float: left;
-  color: rgba(0,0,0,.4);
-  font-family: Gotham;
-}
-
-/* empty p-tags facilitate spacing for address, need height, change if line height changes*/
-.empty-ptag {
-  height: 17px;
-}
-
-
 #login_nav {
   float: right;
-  height: 100px;
   margin-top: 30px;
   font-family: Gudea;
   color: $black;
@@ -87,7 +41,7 @@ $button-color: #ca6612;
   float: left;
   height: 600px;
   background: $white;
-  padding-top: 50px;
+  margin-top: 100px;
   text-align: left;
   li {
     margin: 50px;
@@ -102,6 +56,43 @@ $button-color: #ca6612;
       color: $white;
       }
     }
+  }
+}
+
+// =============================================================
+// Homepage view
+// =============================================================
+
+
+#main {
+  margin-top: 20px;
+  font-family: Gudea, Arial, sans-serif;
+  h1 {
+    font-size: 36px;
+    margin: 0 auto;
+    color: $black;
+  }
+  p {
+    margin-top: 10px;
+    font-size: 18px;
+    color: $dark-gray;
+  }
+}
+
+input {
+  border: 0;
+  padding: 5px;
+  width: 200px;
+  font-size: 18px;
+  background: $light-gray;
+  color: $dark-gray;
+}
+
+input[type="submit"] {
+  background: $blue;
+  color: $white;
+  &:hover {
+    background: darken($blue, 4%);
   }
 }
 
@@ -135,44 +126,6 @@ $button-color: #ca6612;
 // =============================================================
 
 
-
-
-// =============================================================
-// Homepage view
-// =============================================================
-
-
-#main {
-  margin-top: 50px;
-  font-family: Gudea, Arial, sans-serif;
-  h1 {
-    font-size: 36px;
-    margin: 0 auto;
-    color: $black;
-  }
-  p {
-    margin-top: 10px;
-    font-size: 18px;
-    color: $dark-gray;
-  }
-}
-
-input {
-  border: 0;
-  padding: 5px;
-  width: 200px;
-  font-size: 18px;
-  background: $light-gray;
-  color: $dark-gray;
-}
-
-input[type="submit"] {
-  background: $blue;
-  color: $white;
-  &:hover {
-    background: darken($blue, 4%);
-  }
-}
 
 // =============================================================
 // Google Maps

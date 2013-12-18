@@ -24,13 +24,13 @@ $(document).ready(function(){
   });
 
   // ================================================================
-// This function makes flash notices fade in and fade out when there is an error
+// This function makes flash notices fade in and fade out
 // ================================================================
 
 $(function() {
- $('#flash_notice').delay(500).fadeIn('normal', function() {
-  $(this).delay(2000).fadeOut();
-});
+  $('#flash_notice').delay(500).fadeIn('normal', function() {
+    $(this).delay(2000).fadeOut();
+  });
 });
 
 });
