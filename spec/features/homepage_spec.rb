@@ -6,18 +6,28 @@ describe "The Home Page" do
     visit '/'
   end
 
+  it "has a title of 'DevelUp'" do
+    expect(page).to have_title "DevelUp"
+  end
+
+  it "shows the title on the page" do
+    expect(page).to have_content("DevelUp")
+  end
+
   it "says 'Sign in with GitHub'" do
     expect(page).to have_content("Sign in with GitHub")
+  end
+
+  it "says 'Home'" do
+    expect(page).to have_content("Home")
   end
 
   it "says 'Dashboard'" do
     expect(page).to have_content("Dashboard")
   end
 
-  it "has a link to /dashboard" do
-    find_link('Dashboard').click
-    expect(page).to have_content('Dashboard')
-    expect(current_path).to eq('/dashboard')
+  it "says 'Add Location'" do
+    expect(page).to have_content("Add Location")
   end
 
   it "has a link to /home" do
@@ -25,6 +35,12 @@ describe "The Home Page" do
     expect(page).to have_content('Home')
     # for now it will just go back to '/'
     expect(current_path).to eq('/')
+  end
+
+  it "has a link to /dashboard" do
+    find_link('Dashboard').click
+    expect(page).to have_content('Dashboard')
+    expect(current_path).to eq('/dashboard')
   end
 
   it "has a link to GitHub to login" do
