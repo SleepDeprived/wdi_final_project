@@ -1,7 +1,7 @@
 <%= javascript_include_tag "./location_map/location_map" %>
 
 <div id="main" class="eight columns">
-  <h1>Name: <%= @location.name %></h1>
+  <h1><%= @location.name %></h1>
 </div>
 
 <div id="location_view" class="six columns">
@@ -13,7 +13,7 @@
   <span>Zip:</span> <%= @location.zipcode %> <br>
   <span>Description:</span> <%= @location.description %> <br>
 
-  <button id="edit-location-button">Edit</button>
+  <!-- <button id="edit-location-button">Edit</button> -->
 </div>
 
 
