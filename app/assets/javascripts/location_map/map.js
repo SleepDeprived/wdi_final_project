@@ -84,7 +84,6 @@ Map.initHome = function() {
       var template = Handlebars.compile(source);
       var context = {locations: locs}
       var htmlGeneratedByHandlebars    = template(context);
-      debugger
       $("#nearby-location-container").append(htmlGeneratedByHandlebars)
 
     });

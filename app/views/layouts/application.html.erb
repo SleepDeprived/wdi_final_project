@@ -12,7 +12,7 @@
   <script id="map-result" type="text/x-handlebars-template">
     {{#each locations}}
       <div class="entry">
-        <h1>{{name}}</h1>
+        <h2>{{name}}</h2>
         <div class="body">
           {{description}}
         </div>
@@ -20,62 +20,82 @@
     {{/each }}
   </script>
 
-  <div class="container">
+  <div class="container" id="container">
 
-    <div id="notice_container">
-      <% flash.each do |name, msg| %>
-      <%= content_tag :div, msg, id: "flash_#{name}" %>
-      <% end %>
-    </div>
+    <aside id="side_nav" class="four columns">
 
-    <div id="login_nav">
-      <% if current_user %>
-        Welcome, <%= current_user.github_username %>
-        <%= link_to "Sign Out", signout_path %>
-      <% else %>
-        <%= link_to "Sign in with GitHub", "/auth/github" %>
-      <% end %>
-    </div>
-
-
-
-    <div id="side_nav" class="four columns">
-      <div class="four columns">
-        <nav>
-          <ul>
-            <% if current_user %>
-            <li><a href="/">Home</a></li>
-            <li><a href="/dashboard">Dashboard</a></li>
-            <li id="add_location"><a href="#">Add Location</a></li>
-            <% end %>
-          </ul>
-        </nav>
-      </div>
-
+      <nav>
+        <ul>
+          <% if current_user %>
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="/dashboard">Dashboard</a>
+          </li>
+          <li id="add_location">
+            <a href="#">Add Location</a>
+          </li>
+          <% end %>
+        </ul>
+      </nav>
+    
       <div id="location_form" style="display: none;">
-      <%= form_for(Location.new) do |f| %>
-        <%= f.text_field      :name, :placeholder => "Name" %> <br>
-        <%= f.text_field      :address, :placeholder => "Address" %> <br>
-        <%= f.text_field      :address_detail, :placeholder => "Suite/Floor/Apt" %> <br>
-        <%= f.text_field      :city, :placeholder => "City" %> <br>
-        <%= f.text_field      :state, :placeholder => "State" %> <br>
-        <%= f.text_field      :zipcode, :placeholder => "Zip" %> <br>
-        <%= f.text_field      :description, :placeholder => "Description" %> <br> <br>
-        <!-- need to give submit an id of "create_location" -->
-        <div id="create_location">
-          <%= f.submit %>
-        </div>
-      <% end %>
+        <%= form_for(Location.new) do |f| %>
+          <%= f.text_field      :name, :placeholder => "Name" %> <br>
+          <%= f.text_field      :address, :placeholder => "Address" %> <br>
+          <%= f.text_field      :address_detail, :placeholder => "Suite/Floor/Apt" %> <br>
+          <%= f.text_field      :city, :placeholder => "City" %> <br>
+          <%= f.text_field      :state, :placeholder => "State" %> <br>
+          <%= f.text_field      :zipcode, :placeholder => "Zip" %> <br>
+          <%= f.text_field      :description, :placeholder => "Description" %> <br> <br>
+          <!-- need to give submit an id of "create_location" -->
+          <div id="create_location">
+            <%= f.submit %>
+          </div>
+        <% end %>
       </div>
-    </div>
+    </aside>
+
+    <main class="twelve columns">
+      <header id="main" class="twelve columns margin display">
+        <h1 class="three columns">
+          DevelUp
+        </h1>
+        <p class="four columns">
+          Find good places to code and increase your productivity
+        </p>
 
 
-  <%= yield %>
+      
+        <!-- <div id="login_nav" class="five columns"> -->
+          <% if current_user %>
+          <div class="margin-display offset-by-one two columns">
+            Welcome, <%= current_user.github_username %>
+          </div>
+          <div id="login_nav" class="margin-display ">
+            <%= link_to "Sign Out", signout_path %> 
+          </div>
+          <% else %>
+          <div id="login_nav" class="margin-display ">
+            <%= link_to "Sign in with GitHub", "/auth/github" %>
+          </div>
+          <% end %>
+        <!-- </div> -->
 
-</div>
-<!-- container end -->
+      </header>
+      
+      <div id="notice_container" class="ten columns">
+        <% flash.each do |name, msg| %>
+        <%= content_tag :div, msg, id: "flash_#{name}" %>
+        <% end %>
+      </div>  <!-- notice container end -->
 
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=<% ENV['GOOGLE_API_KEY'] %>&sensor=true"></script>
+      <%= yield %>
+    <main>
+  </div> <!-- container end -->
 
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=<% ENV['GOOGLE_API_KEY'] %>&sensor=true"></script>
+  <footer></footer>
 </body>
 </html>
