@@ -5,7 +5,8 @@ Dashboard.beginSitting = function() {
 	$("#start-sitting-button").hide();
 	$("#end-sitting-button").show();
 	// $("#end-sitting-button").data(); THIS IS GOING TO BE THE RECORD ID OF THE NEW SITTING CREATED
-	if ($("#timer_toggle").val() === 1) {
+	Dashboard.settings["location_id"] = $("#current-sitting-location").data()["id"]
+	if ($("#timer_toggle").val() === "1") {
 		Dashboard.settings["commit_clock_on"] = true;
 		Dashboard.settings["commit_clock_duration"] = $("#time").val();
 	} else {
@@ -13,8 +14,21 @@ Dashboard.beginSitting = function() {
 		Dashboard.settings["commit_clock_duration"] = null;
 	}
 
-
+	Dashboard.createSitting(Dashboard.settings);
 }
+
+
+Dashboard.createSitting = function(inputData) {
+	$.ajax({
+      dataType: "json",
+      type: "POST",
+      url: "/sittings",
+      data: inputData
+    }).done(function(response){
+    	console.log(response);
+  }); 
+}
+
 
 Dashboard.endSitting = function () {
 	$("#start-sitting-button").show();
@@ -50,20 +64,18 @@ Dashboard.showPosition = function(position) {
 }
 
 Dashboard.findLocation = function(string) {
-      debugger;
 	$.ajax({
       dataType: "json",
       type: "GET",
       url: "/location_by_coords?" + string
     }).done(function(response){
-    	if (response.address === "") {
+    	if (response === null) {
     		// alert("Please add your location!")
 	     window.webkitNotifications.createNotification('rails.png', "We can't find your location", "Please add your location.").show();
 	     // make a bunch of different commit messages and sample them -- purely to keep people intereted in reading the messages
     	} else {
-      loc = response;
       console.log(response);
-      $("#current-sitting-location").text(response.address).data("id", "response.id")
+      $("#current-sitting-location").text("Current Location: " + response.name).data("id", response.id)
       }
   }); 
 }

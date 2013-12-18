@@ -33,5 +33,6 @@ FinalProject::Application.routes.draw do
   get "/location_by_coords" => "sittings#location_by_coords"
 
   resources :locations
+  get "/nearby_locations" => "locations#nearby_locations"
 
 end

@@ -3,6 +3,7 @@ class Sitting < ActiveRecord::Base
 
   def rev_geo(coordinates)
   	binding.pry
+  	address = Geocoder.search(coordinates[], coordinates[])
   end
 
 end
