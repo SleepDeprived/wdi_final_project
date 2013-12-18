@@ -15,6 +15,51 @@ $button-color: #ca6612;
 // =============================================================
 
 
+.location-show {
+  width: 450px;
+  height: 500px;
+  float: left;
+}
+
+.info-location-name {
+  margin-top: 100px;
+  margin-left: 20px;
+  font-family: Gotham;
+  float: left;
+}
+
+/* section on left-hand side of page containing detailed information about a market*/
+#info-section {
+  width: 420px;
+  margin: 10px;
+  padding:0;
+  font-size: 16px;
+}
+
+/* class applied to each label that identifies the pieces of detailed information about the market*/
+.info-labels {
+  width: 150px;
+  text-align: right;
+  float: left;
+  padding-right: 10px;
+  color: rgba(0,0,0,.8);
+  font-family: Gotham;
+}
+
+/* class applied to each piece of detailed information about a single market*/
+.info-data {
+  width: 250px;
+  float: left;
+  color: rgba(0,0,0,.4);
+  font-family: Gotham;
+}
+
+/* empty p-tags facilitate spacing for address, need height, change if line height changes*/
+.empty-ptag {
+  height: 17px;
+}
+
+
 #login_nav {
   float: right;
   height: 100px;
@@ -27,6 +72,7 @@ $button-color: #ca6612;
     background: $blue;
     color: $white;
     padding: 10px;
+    border-radius: 4px;
     &:hover {
       background: darken($blue, 4%);
     }
@@ -101,7 +147,7 @@ $button-color: #ca6612;
   font-family: Gudea, Arial, sans-serif;
   h1 {
     font-size: 36px;
-    margin: 20px auto;
+    margin: 0 auto;
     color: $black;
   }
   p {
@@ -124,7 +170,7 @@ input[type="submit"] {
   background: $blue;
   color: $white;
   &:hover {
-    background: darken($blue, 10%);
+    background: darken($blue, 4%);
   }
 }
 
@@ -168,4 +214,26 @@ input[type="submit"] {
   &:hover {
     background: darken($blue, 4%);
   }
+}
+
+
+
+// =============================================================
+// Flash message
+// =============================================================
+
+#notice_container {
+  width: 100%;
+  margin: 0 auto;
+  background-color: #CFC;
+  text-align: center;
+  font-size: 20px;
+}
+
+#flash_notice {
+    padding: 5px 8px;
+    margin: 10px 0;
+    background-color: #CFC;
+    border: solid 1px #6C6;
+    text-align: center;
 }

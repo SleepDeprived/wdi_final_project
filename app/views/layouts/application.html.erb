@@ -11,7 +11,11 @@
 
   <div class="container">
 
-    <div id="notice"></div>
+    <div id="notice_container">
+      <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, id: "flash_#{name}" %>
+      <% end %>
+    </div>
 
     <div id="login_nav">
       <% if current_user %>
@@ -21,6 +25,7 @@
         <%= link_to "Sign in with GitHub", "/auth/github" %>
       <% end %>
     </div>
+
     <div id="side_nav">
       <div class="four columns">
         <nav>
@@ -49,7 +54,6 @@
         </div>
       <% end %>
       </div>
-      <div id="errors"></div>
     </div>
 
 
