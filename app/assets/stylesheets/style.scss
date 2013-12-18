@@ -4,22 +4,26 @@
 
 $blue: #2F7ED8;
 $white: #ffffff;
+$black: rgba(0,0,0,.8);
 $light-gray: rgba(0,0,0,.2);
+$dark-gray: rgba(0,0,0,.6);
 $button-color: #ca6612;
 
 
 // =============================================================
-// Application.html.haml
+// Template (Application.html.haml)
 // =============================================================
 
 
 #login_nav {
   float: right;
   height: 100px;
-  margin-top: 20px;
+  margin-top: 30px;
+  font-family: Gudea;
+  color: $black;
   a {
     text-decoration: none;
-    font-family: Helvetica;
+    font-family: Gudea;
     background: $blue;
     color: $white;
     padding: 10px;
@@ -97,6 +101,12 @@ $button-color: #ca6612;
   h1 {
     font-size: 36px;
     margin: 20px auto;
+    color: $black;
+  }
+  p {
+    margin-top: 10px;
+    font-size: 18px;
+    color: $dark-gray;
   }
 }
 
@@ -106,7 +116,7 @@ input {
   width: 200px;
   font-size: 18px;
   background: $light-gray;
-  color: #8c8c8c;
+  color: $dark-gray;
 }
 
 input[type="submit"] {
@@ -116,6 +126,10 @@ input[type="submit"] {
     background: darken($blue, 10%);
   }
 }
+
+// =============================================================
+// Google Maps
+// =============================================================
 
 .gmap-container {
   height: 400px;
