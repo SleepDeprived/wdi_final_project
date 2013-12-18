@@ -29,7 +29,6 @@ googleMap.getLocations = function() {
     type: "GET",
     url: "/locations"
   }).done(function(data){
-    debugger;
     locs = data;
     console.log(data);
   });

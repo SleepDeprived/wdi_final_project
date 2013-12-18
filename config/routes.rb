@@ -10,9 +10,7 @@ FinalProject::Application.routes.draw do
   get "/github" => "welcome#github"
   get "/find_location" => "welcome#find_location"
 
-  post "/create_sitting" => "welcome#create_sitting"
-
-  post "/update_sitting" => "welcome#update_sitting"
+  resources :sittings, only: [:create, :update]
 
   resources :locations
 

@@ -20,12 +20,12 @@ class WelcomeController < ApplicationController
 
   def find_location
     # binding.pry
-    @current_location = Location.find_by(latitude: params[:coordinates], longitude: params[:coordinates])
+    @current_location = Location.where(latitude: params[:coordinates], longitude: params[:coordinates]).first
+    render json: @current_location
   end
 
   def create_sitting
-    user = current_user
-    data = {user_id: user[:id], location_id: params[], start_time: Time.new}
+    data = {user_id: current_user.id, location_id: params[], start_time: Time.new, commit_clock_on: params[], commit_clock_duration: params[]}
     # Sitting.create(data)
     # this creates a sitting
   end

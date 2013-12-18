@@ -21,9 +21,8 @@ function timer() {
 
 		function countdown() {
 		  if (duration <= 0) {
-		     var alarm = window.webkitNotifications.createNotification('rails.png', 'Time to Commit', "I pity the fool who doesn't commit");
+		     var alarm = window.webkitNotifications.createNotification('rails.png', 'Time to Commit', "I pity the fool who doesn't commit").show();
 		     // make a bunch of different commit messages and sample them -- purely to keep people intereted in reading the messages
-		     alarm.show();
 		     // add a sound 
 		     // use choir.io (bloop: [alarm, kasplode, horn, warble, success, cheer], submarine: [echopop, dolphinchuckle, lownar, submed, orca])
 		     clearInterval(counter); //this isn't working, check into it
