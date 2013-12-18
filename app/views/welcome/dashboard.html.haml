@@ -1,33 +1,34 @@
 = javascript_include_tag "./dashboard/dashboard_app"
 = javascript_include_tag "http://code.highcharts.com/highcharts.js"
 
-#main.eight.columns
-	%h1 Dashboard
-
-
-Timer
-=check_box_tag :timer_toggle, 1, true
-#timer-elements.eight.columns
-	=label_tag :time
-	=select_tag :time, options_for_select([["3 seconds", 0.05], ["10 minutes", 10], ["15 minutes", 15], ["20 minutes", 20], ["30 minutes", 30], ["45 minutes", 45], ["60 minutes", 60]])
-	=submit_tag "Start Timer", id: "start_timer_button"
-	%p#timer
-
-#sitting.six.columns
-	Session
-	%p#current-sitting-location
-		Current Location:
-	#sitting-button
+#sitting.five.columns.action-bar
+	%h3.two.columns
+		Session
+	#sitting-button.two.columns
 		%button#start-sitting-button
 			Start Session
 		%button#end-sitting-button
 			End Session
+	#current-sitting-location.minor-labels.four.columns
+		Current Location:
 	%p#sitting-duration
 
-Summary Graph
-%figure#chart.eight.columns
-%script#summary-template.detail{ type: "text/x-handlebars-template"}
-	Name: = name
+
+#timer.six.columns.action-bar
+	%h3 
+		Timer
+	=check_box_tag :timer_toggle, 1, true
+	#timer-elements.minor-labels
+		=label_tag :time
+		=select_tag :time, options_for_select([["3 seconds", 0.05], ["10 minutes", 10], ["15 minutes", 15], ["20 minutes", 20], ["30 minutes", 30], ["45 minutes", 45], ["60 minutes", 60]])
+		=submit_tag "Start Timer", id: "start_timer_button"
+		%p#countdown-timer.offset-by-one
+
+
+%figure#chart
+	Summary Graph
+	%script#summary-template.detail{ type: "text/x-handlebars-template"}
+		Name: = name
 
 /the content of the template needs to updated so that the names match the attribute titles coming back in the json from GitHub
 

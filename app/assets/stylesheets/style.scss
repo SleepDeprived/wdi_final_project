@@ -12,13 +12,14 @@ $button-color: #ca6612;
 
 // test colors & attributes
 
-p {
-  background: pink;
-}
 
-#container {
-  background: yellow;
-}
+// #container {
+//   background: #eee;
+// }
+
+// .test {
+//   background: green;
+// }
 
 // =============================================================
 // Template (Application.html.haml)
@@ -27,15 +28,35 @@ body, #container, #side_nav {
   height: 100%;
 }
 
+body {
+  background: rgba(248, 248, 240, 1);
+}
+
 header {
   margin: 25px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid $black;
 }
 
 aside{
+  margin-top: 50px;
   height: 100%;
-  background: red;
 }
 
+main {
+  margin: 0;
+}
+
+h3 {
+  font-size: 28px;
+  display: inline-block;
+  margin: 0;
+}
+
+
+.minor-labels {
+ font-size: 20px; 
+}
 
 .github {
   background: url("../img/iconmonstr-github-9-icon-32.png") no-repeat;
@@ -44,7 +65,7 @@ aside{
 #side_nav {
   // float: left;
   // height: 100%;
-  background: $white;
+  // background: $white;
   margin-top: 100px 50px;
   text-align: left;
   li {
@@ -97,21 +118,24 @@ p {
     color: $dark-gray;
   }
 
-
-input {
-  border: 0;
-  padding: 5px;
-  width: 200px;
-  font-size: 18px;
-  background: $light-gray;
-  color: $dark-gray;
+form {
+  input {
+    border: 0;
+    padding: 5px;
+    width: 200px;
+    font-size: 18px;
+    background: $light-gray;
+    color: $dark-gray;
+  }
 }
 
-input[type="submit"] {
-  background: $blue;
-  color: $white;
-  &:hover {
-    background: darken($blue, 4%);
+#create_location {
+  input[type="submit"] {
+    background: $blue;
+    color: $white;
+    &:hover {
+      background: darken($blue, 4%);
+    }
   }
 }
 
@@ -140,13 +164,20 @@ input[type="submit"] {
 // session / sitting buttons----------------
 #start-sitting-button{
   display: show;
+  margin: 5px;
 }
 
 #end-sitting-button{
   display: none;
 }
 
+.action-bar {
+  height: 100px;
+}
 
+#countdown-timer {
+  font-size: 30px;
+}
 
 
 // =============================================================

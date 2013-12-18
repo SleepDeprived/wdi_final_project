@@ -26,14 +26,14 @@ function timer() {
 		     // add a sound 
 		     // use choir.io (bloop: [alarm, kasplode, horn, warble, success, cheer], submarine: [echopop, dolphinchuckle, lownar, submed, orca])
 		     clearInterval(counter); //this isn't working, check into it
-		     $("#timer").html('');
+		     $("#countdown-timer").html('');
 		     // also need to reset the timer -- have click create new Timer object instead?
 		     return;
 		  }
 		  //Do code for showing the number of seconds here
 		  var minutes = Math.floor(duration / 60);
 		  var seconds = duration - minutes * 60;
-		  $("#timer").html(minutes + " min " + seconds + " sec"); // watch for spelling
+		  $("#countdown-timer").html(minutes + " min " + seconds + " sec"); // watch for spelling
 		  duration = duration-1;
 		} //end of countdown function
 	}
