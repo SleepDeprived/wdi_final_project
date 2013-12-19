@@ -14,7 +14,7 @@
  *= require skeleton
 
  *= require layout
- *=
+ *= require timer
  *= require style
  *=
  */

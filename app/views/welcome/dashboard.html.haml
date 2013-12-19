@@ -15,14 +15,26 @@
 
 
 #timer.six.columns.action-bar
-	%h3 
-		Timer
+	%h3.four.columns
+		Git Commit Timer
+	/ .onoffswitch
+	/ %input#myonoffswitch.onoffswitch-checkbox{checked: "checked", name: "onoffswitch", type: "checkbox"}/
+	/ %label.onoffswitch-label{for: "myonoffswitch"}
+	/ 	.onoffswitch-inner
+	/ 	.onoffswitch-switch
+
+
+
+	#on-off-switch.offset-by-one.column
 	=check_box_tag :timer_toggle, 1, true
-	#timer-elements.minor-labels
-		=label_tag :time
+	
+	#timer-elements.minor-labels.five.columns
+		Duration
 		=select_tag :time, options_for_select([["3 seconds", 0.05], ["10 minutes", 10], ["15 minutes", 15], ["20 minutes", 20], ["30 minutes", 30], ["45 minutes", 45], ["60 minutes", 60]])
 		=submit_tag "Start Timer", id: "start_timer_button"
+	
 		%p#countdown-timer.offset-by-one
+
 
 
 %figure#chart
