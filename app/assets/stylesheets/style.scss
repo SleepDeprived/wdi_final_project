@@ -10,6 +10,9 @@ $dark-gray: rgba(0,0,0,.6);
 $button-color: #ca6612;
 
 
+// Font Sizes------------------------------------
+
+
 // test colors & attributes
 
 
@@ -33,6 +36,7 @@ body {
 }
 
 header {
+  font-family: Gudea;
   margin: 25px;
   padding-bottom: 10px;
   border-bottom: 1px solid $black;
@@ -53,6 +57,14 @@ h3 {
   margin: 0;
 }
 
+#location-name {
+  font-size: 20px;
+}
+
+.location-template {
+  margin: 10px 0;
+  padding: 0;
+}
 
 .minor-labels {
  font-size: 20px; 

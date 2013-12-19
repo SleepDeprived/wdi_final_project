@@ -11,9 +11,15 @@
 
   <script id="map-result" type="text/x-handlebars-template">
     {{#each locations}}
-      <div class="entry">
-        <h2>{{name}}</h2>
-        <div class="body">
+      <div class="location-template four columns">
+        <h4 id="location-name">{{name}}</h4>
+        <div>
+          {{address}}
+        </div>
+        <div>
+          {{city}} {{state}}, {{zipcode}}
+        </div>
+        <div>
           {{description}}
         </div>
       </div>
@@ -91,7 +97,7 @@
       </div>  <!-- notice container end -->
 
       <%= yield %>
-    <main>
+    </main>
   </div> <!-- container end -->
 
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=<% ENV['GOOGLE_API_KEY'] %>&sensor=true"></script>
