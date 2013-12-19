@@ -28,7 +28,7 @@
         <ul>
           <% if current_user %>
           <li>
-            <a href="/">Home</a>
+            <a href="/">Locations</a>
           </li>
           <li>
             <a href="/dashboard">Dashboard</a>
@@ -39,7 +39,7 @@
           <% end %>
         </ul>
       </nav>
-    
+
       <div id="location_form" style="display: none;">
         <%= form_for(Location.new) do |f| %>
           <%= f.text_field      :name, :placeholder => "Name" %> <br>
@@ -67,14 +67,14 @@
         </p>
 
 
-      
+
         <!-- <div id="login_nav" class="five columns"> -->
           <% if current_user %>
           <div class="margin-display offset-by-one two columns">
             Welcome, <%= current_user.github_username %>
           </div>
           <div id="login_nav" class="margin-display ">
-            <%= link_to "Sign Out", signout_path %> 
+            <%= link_to "Sign Out", signout_path %>
           </div>
           <% else %>
           <div id="login_nav" class="margin-display ">
@@ -84,7 +84,7 @@
         <!-- </div> -->
 
       </header>
-      
+
       <div id="notice_container" class="ten columns">
         <% flash.each do |name, msg| %>
         <%= content_tag :div, msg, id: "flash_#{name}" %>
