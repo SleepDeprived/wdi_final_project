@@ -34,7 +34,7 @@ body {
 
 header {
   margin: 25px;
-  padding-bottom: 25px;
+  padding-bottom: 10px;
   border-bottom: 1px solid $black;
 }
 
@@ -84,7 +84,7 @@ h3 {
   }
 }
 
-#login_nav {
+.login_nav {
   // margin-top: 30px;
   font-family: Gudea;
   color: $black;
@@ -101,6 +101,10 @@ h3 {
       background: darken($blue, 4%);
     }
   }
+}
+
+#tag-line {
+  margin-top: 5px;
 }
 // =============================================================
 // Homepage view
@@ -148,6 +152,8 @@ form {
   margin: 0 auto;
   display: inline-block;
 }
+
+
 
 
 // =============================================================

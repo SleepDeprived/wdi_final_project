@@ -59,30 +59,29 @@
 
     <main class="twelve columns">
       <header id="main" class="twelve columns margin display">
+
         <h1 class="three columns">
           DevelUp
         </h1>
-        <p class="four columns">
-          Find good places to code and increase your productivity
-        </p>
-
-
       
-        <!-- <div id="login_nav" class="five columns"> -->
-          <% if current_user %>
-          <div class="margin-display offset-by-one two columns">
-            Welcome, <%= current_user.github_username %>
-          </div>
-          <div id="login_nav" class="margin-display ">
-            <%= link_to "Sign Out", signout_path %> 
-          </div>
-          <% else %>
-          <div id="login_nav" class="margin-display ">
-            <%= link_to "Sign in with GitHub", "/auth/github" %>
-          </div>
-          <% end %>
-        <!-- </div> -->
+        <% if current_user %>
+        <div class="margin-display offset-by-five two columns">
+          Welcome, <%= current_user.github_username %>
+        </div>
+        <div class="login_nav margin-display ">
+          <%= link_to "Sign Out", signout_path %> 
+        </div>
+        <% else %>
+        <div class="login_nav margin-display">
+          <%= link_to "Sign in with GitHub", "/auth/github" %>
+        </div>
+        <% end %>
 
+        <div class="ten columns">
+          <p id="tag-line">
+            Find good places to code and increase your productivity
+          </p>
+        </div>
       </header>
       
       <div id="notice_container" class="ten columns">
