@@ -197,6 +197,12 @@ form {
 }
 
 
+// Graph--------------------------------------------------
+
+#chart {
+  text-align: center;
+}
+
 // timer-------------------------
 #timer-elements {
 	display: show;
@@ -260,6 +266,7 @@ form {
   height: 450px;
   width: 680px;
   display: inline-block;
+  text-align: center;
   // margin: 50px auto;
 }
 
