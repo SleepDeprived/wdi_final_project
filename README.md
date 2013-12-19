@@ -2,6 +2,7 @@
 
 [![Coverage Status](https://coveralls.io/repos/SleepDeprived/wdi_final_project/badge.png?branch=master)](https://coveralls.io/r/SleepDeprived/wdi_final_project?branch=master)
 
+
 ###TITLE OF APP
 
 ######Created by Jimmy Davis and Tom Metzger
