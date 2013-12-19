@@ -6,12 +6,12 @@ class SessionsController < ApplicationController
     session[:user_id] = @user.id
     # @user.github_call
     binding.pry
-    redirect_to :root
+    redirect_to("/")
   end
 
   def destroy
     session[:user_id] = nil
-    redirect_to :root
+    redirect_to('/')
   end
 
 end
