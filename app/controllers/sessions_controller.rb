@@ -5,12 +5,13 @@ class SessionsController < ApplicationController
     @user = User.find_by_provider_and_uid(auth["provider"], auth["uid"]) || User.create_with_omniauth(auth)
     session[:user_id] = @user.id
     # @user.github_call
-    redirect_to root_url
+    binding.pry
+    redirect_to :root
   end
 
   def destroy
     session[:user_id] = nil
-    redirect_to root_url
+    redirect_to :root
   end
 
 end
