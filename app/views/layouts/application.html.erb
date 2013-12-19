@@ -30,22 +30,6 @@
 
     <aside id="side_nav" class="four columns">
 
-      <!-- <nav>
-        <ul>
-          <%# if current_user %>
-          <li>
-            <a href="/">Home</a>
-          </li>
-          <li>
-            <a href="/dashboard">Dashboard</a>
-          </li>
-          <li id="add_location">
-            <a href="#">Add Location</a>
-          </li>
-          <%# end %>
-        </ul>
-      </nav>
- -->
       <nav>
         <% if current_user %>
         <div>
@@ -59,7 +43,7 @@
         </div>
         <% end %>
       </nav>
-    
+
       <div id="location_form" style="display: none;">
         <%= form_for(Location.new) do |f| %>
           <%= f.text_field      :name, :placeholder => "Name" %> <br>
@@ -83,19 +67,42 @@
         <h1 class="three columns">
           DevelUp
         </h1>
-      
+
+<!--         <p class="four columns">
+          Find good places to code and increase your productivity
+        </p> -->
+
+
+
+        <!-- <div id="login_nav" class="five columns"> -->
+          <%# if current_user %>
+          <!-- <div class="margin-display offset-by-one two columns"> -->
+            <!-- Welcome, <%#= current_user.github_username %> -->
+          <!-- </div> -->
+          <!-- <div id="login_nav" class="margin-display "> -->
+            <%#= link_to "Sign Out", signout_path %>
+          <!-- </div> -->
+          <%# else %>
+          <!-- <div id="login_nav" class="margin-display "> -->
+            <%#= link_to "Sign in with GitHub", "/auth/github" %>
+          <!-- </div> -->
+          <%# end %>
+        <!-- </div> -->
+
+
         <% if current_user %>
         <div class="margin-display offset-by-five two columns">
           Welcome, <%= current_user.github_username %>
         </div>
         <div class="login_nav margin-display ">
-          <%= link_to "Sign Out", signout_path %> 
+          <%= link_to "Sign Out", signout_path %>
         </div>
         <% else %>
         <div class="login_nav margin-display offset-by-three five columns">
           <%= link_to "Sign in with GitHub", "/auth/github", {id: "signin"} %>
         </div>
         <% end %>
+>>>>>>> master
 
         <div class="ten columns">
           <p id="tag-line">
@@ -103,7 +110,7 @@
           </p>
         </div>
       </header>
-      
+
       <div id="notice_container" class="ten columns">
         <% flash.each do |name, msg| %>
         <%= content_tag :div, msg, id: "flash_#{name}" %>

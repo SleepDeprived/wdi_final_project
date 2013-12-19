@@ -1,23 +1,27 @@
 <%= javascript_include_tag "./location_map/location_map" %>
 
-<div id="main" class="eight columns">
-  <h1><%= @location.name %></h1>
+<div id="show_locations_name" class="eight columns">
+  <%= @location.name %>
 </div>
 
-<div id="location_view" class="six columns">
-  <br>
-  <span>Address:</span> <%= @location.address %> <br>
-  <span>Suite/Floor:</span> <%= @location.address_detail %> <br>
-  <span>City:</span> <%= @location.city %> <br>
-  <span>State:</span> <%= @location.state %> <br>
-  <span>Zip:</span> <%= @location.zipcode %> <br>
-  <span>Description:</span> <%= @location.description %> <br>
-
-  <!-- <button id="edit-location-button">Edit</button> -->
+  <div id="show_location_labels" class="four columns">
+    <p>Address:</p>
+    <p>Suite/Floor:</p>
+    <p>City:</p>
+    <p>State:</p>
+    <p>Zip:</p>
+    <p>Description:</p>
+  </div>
+  <div id="show_locations_data" class="four columns">
+    <p><%= @location.address %></p>
+    <p><%=@location.address_detail%></p>
+    <p><%=@location.city%></p>
+    <p><%=@location.state%></p>
+    <p><%=@location.zipcode%></p>
+    <p><%=@location.description%></p>
+  </div>
 </div>
 
-
-<br>
 
 <div class="gmap-container eight columns">
   <div id="gmap-canvas"></div>

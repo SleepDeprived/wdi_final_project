@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "The Home Page" do
+describe "The Locations Page" do
 
   before(:each) do
     visit '/'
@@ -15,8 +15,8 @@ describe "The Home Page" do
     expect(page).to have_content("DevelUp")
   end
 
-  it "says 'Home'" do
-    expect(page).to have_content("Home")
+  it "says 'Locations'" do
+    expect(page).to have_content("Locations")
   end
 
   it "says 'Dashboard'" do
@@ -28,8 +28,8 @@ describe "The Home Page" do
   end
 
   it "has a link to /" do
-    find_link('Home').click
-    expect(page).to have_content('Home')
+    find_link('Locations').click
+    expect(page).to have_content('Locations')
     expect(current_path).to eq('/')
   end
 

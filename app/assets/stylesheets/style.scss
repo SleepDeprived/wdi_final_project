@@ -70,7 +70,7 @@ h3 {
 }
 
 .minor-labels {
- font-size: 20px; 
+ font-size: 20px;
 }
 
 .github {
@@ -209,7 +209,19 @@ form {
 
 #end-sitting-button{
   display: none;
+  background: $blue;
 }
+
+#start-sitting-button, #end-sitting-button, #start_timer_button {
+  background: $blue;
+  color: $white;
+  border-style: none;
+  border-radius: 4px;
+  &:hover {
+    background: darken($blue, 4%)
+  }
+}
+
 
 .action-bar {
   height: 100px;
@@ -264,7 +276,7 @@ form {
 
 
 #edit-location-button {
-  font-family: Helvetica;
+  font-family: Gudea;
   background: $blue;
   color: $white;
   padding: 10px;
@@ -273,6 +285,22 @@ form {
     background: darken($blue, 4%);
   }
 }
+#show_locations_name {
+  margin-top: 20px 0px;
+  font-family: Gudea, Arial, sans-serif;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#show_location_labels {
+  text-align: right;
+}
+
+#show_location_data {
+
+}
+
 
 #nearby-location-container {
 
