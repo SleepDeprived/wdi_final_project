@@ -7,7 +7,7 @@ For more information about the developers:
 
 Jimmy Davis:
 
-- <http://www.>	
+- <http://www.jimmydavis.github.io>	
 - <http://github.com/jimmydavis>
 
 Tom Metzger
@@ -15,74 +15,37 @@ Tom Metzger
 - <http://www.tmtezger.com>
 - <http://github.com/SleepDeprived>
 
+#####Purpose of the Application
 
-###Key Changes
-
-
-###TODO
-
-**Productivity section to-dos **
-
-1. Authentication token not being passed with GitHub API call, causes request limit breach and then requests fail and app breaks
-	- also figure this out:
-	- Access Tokens
-		- Access tokens allow your application to communicate with Harvest on behalf of your users. Each user in Harvest is granted a token that expires after 18 hours. Users also have refresh tokens that can be used to request new access tokens for up to 30 days.
-		- https://github.com/harvesthq/api/blob/master/Authentication/OAuth%202.0.md
-2. Figure out what GitHub request will provide the data we need to be able to manipulate to produce the outputs we need
-3. Create methods in ruby model to process github response to a format that highcharts can use
-4. Create 3 backbone routes, collections, and views for different data summaries (commites by day over a week, month, and year)
-5. Add highcharts functions to create data vis 
-	- all should be bar graphs (maybe a line graph for the year, but not continuous data so not precise use of line chart)
-6. Finish Timer
+A productivity app for developers aimed at leveraging community knowlege and building developer networks.  
 
 
 
-Join table of location ID , User ID
+####Detailed Description
+This application will provide developers with tools to help improve their productivity. 
 
-	- has and belongs to many
+Developers can use information from the application to discover new locations to code, improve Git commit frequency with commit reminders, assess and track productivity against a host of different parameters, and connect with other developers in the area.  
 
-**Location**
-
-Location Page
-
-1. detect user location
-	- mvp on button click
-	- production - automatic
-2. CRUD view for locations
-	- new page show all, add location, update location, delete button
-	- use geocoder to get lat and long of location based off of address submitted
-3. determine how many locations are X distance away from user's current location
-4. display those locations
-	- list or google map
-5. Update # of people at each location (this refers to current sittings info)
-
-
-Sitting need location info
-
-
-1. Get user's location and put in database as **sitting in sittings table**
-	- figure out location authorization (simply trying to grab and store location should trigger authorization request from browser)
-	- button on dashboard (Start Working)
-2. live ping client to see who is still working at each location (Redis database)
-	
-------	
-	
-2. Get locations & decide how to serve them on the page 
-	- start by listing "nearest locations" to location of user
-	- determine how to figure out nearest
-3. Count the number of users at a location & show list of locations with:
-	- location name
-	- location address
-	- number of people (or just start by listing the people at that location)
-4. figure out how to dynamically update users at a location without requiring page reload
-	- use redis
-
-
-**Styling**
-
-1. style all pages
-2. location page should be mobile responsive
+Developers will sign in using their GitHub account in order to maintain a developer centric community of users and thus users must be logged in to use the application. A logged in user can then use the application to discover locations that are conductive to coding, and identify other developers that may be at these locations that are open to meeting other developers and potentially serving as sounding boards for questions and ideas.  Users that leave the application running while they work can use the commit timer to remind them to regularly commit changes, the application will also track behavior during this time and provide metrics and summary statistics on a user's productivity when they were working and over time this data can be aggregated and analyzed to evaluate behavior and improve productivity.
 
 
 
+
+**Highcharts**
+
+http://www.highcharts.com/
+
+**Aja Hammerly's presentations, GitHub, and Blog**
+
+GitHub: https://github.com/kushali
+Blog: http://www.thagomizer.com/
+Talks: Golden Gate Ruby Conf 2013 specifically, other talks linked to through her blog
+
+**peter-murach github api**
+
+https://github.com/peter-murach/github/blob/master/lib/github_api/repos.rb?source=cc
+
+**github statistics**
+
+http://developer.github.com/v3/repos/statistics/#get-the-number-of-commits-per-hour-in-each-day
 
