@@ -5,7 +5,6 @@ class SessionsController < ApplicationController
     @user = User.find_by_provider_and_uid(auth["provider"], auth["uid"]) || User.create_with_omniauth(auth)
     session[:user_id] = @user.id
     # @user.github_call
-    binding.pry
     redirect_to("/")
   end
 
