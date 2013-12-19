@@ -45,6 +45,7 @@
       </nav>
 
       <div id="location_form" style="display: none;">
+
         <%= form_for(Location.new) do |f| %>
           <%= f.text_field      :name, :placeholder => "Name" %> <br>
           <%= f.text_field      :address, :placeholder => "Address" %> <br>

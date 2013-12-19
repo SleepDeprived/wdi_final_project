@@ -60,6 +60,7 @@ group :development, :test do
   gem "selenium-webdriver"
   gem "jasmine"
   gem "pry-rails"
+  gem 'coveralls', require: false
 end
 
 group :development do
@@ -77,3 +78,4 @@ gem "simplecov", :require => false, :group => :test
 gem "thin"
 gem "haml-rails"
 gem "handlebars_assets", :group => :assets
+
