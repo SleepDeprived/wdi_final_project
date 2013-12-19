@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/SleepDeprived/wdi_final_project.png?branch=testing)](https://travis-ci.org/SleepDeprived/wdi_final_project)
+
 ###TITLE OF APP
 
 ######Created by Jimmy Davis and Tom Metzger
@@ -7,7 +9,7 @@ For more information about the developers:
 
 Jimmy Davis:
 
-- <http://www.jimmydavis.github.io>	
+- <http://www.jimmydavis.github.io>
 - <http://github.com/jimmydavis>
 
 Tom Metzger
@@ -17,14 +19,14 @@ Tom Metzger
 
 #####Purpose of the Application
 
-A productivity app for developers aimed at leveraging community knowlege and building developer networks.  
+A productivity app for developers aimed at leveraging community knowlege and building developer networks.
 
 
 
 ####Detailed Description
-This application will provide developers with tools to help improve their productivity. 
+This application will provide developers with tools to help improve their productivity.
 
-Developers can use information from the application to discover new locations to code, improve Git commit frequency with commit reminders, assess and track productivity against a host of different parameters, and connect with other developers in the area.  
+Developers can use information from the application to discover new locations to code, improve Git commit frequency with commit reminders, assess and track productivity against a host of different parameters, and connect with other developers in the area.
 
 Developers will sign in using their GitHub account in order to maintain a developer centric community of users and thus users must be logged in to use the application. A logged in user can then use the application to discover locations that are conductive to coding, and identify other developers that may be at these locations that are open to meeting other developers and potentially serving as sounding boards for questions and ideas.  Users that leave the application running while they work can use the commit timer to remind them to regularly commit changes, the application will also track behavior during this time and provide metrics and summary statistics on a user's productivity when they were working and over time this data can be aggregated and analyzed to evaluate behavior and improve productivity.
 
