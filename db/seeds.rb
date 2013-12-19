@@ -26,19 +26,19 @@ l2a = Location.create(
       :address_detail => '4',
       :city => 'New York',
       :state => 'NY',
-      :zipcode => '10010',
+      :zipcode => '10003',
       :description => 'GA West campus'
   )
 
-l2b = Location.create(
-      :name => 'GA West',
-      :address => '912 Broadway',
-      :address_detail => '4',
-      :city => 'New York',
-      :state => 'NY',
-      :zipcode => '10010',
-      :description => 'GA West campus'
-  )
+# l2b = Location.create(
+#       :name => 'GA West',
+#       :address => '912 Broadway',
+#       :address_detail => '4',
+#       :city => 'New York',
+#       :state => 'NY',
+#       :zipcode => '10010',
+#       :description => 'GA West campus'
+#   )
 
 l3 = Location.create(
       :name => 'GA South',
