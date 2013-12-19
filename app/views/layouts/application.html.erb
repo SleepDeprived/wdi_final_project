@@ -72,8 +72,8 @@
           <%= link_to "Sign Out", signout_path %> 
         </div>
         <% else %>
-        <div class="login_nav margin-display">
-          <%= link_to "Sign in with GitHub", "/auth/github" %>
+        <div class="login_nav margin-display offset-by-three five columns">
+          <%= link_to "Sign in with GitHub", "/auth/github", {id: "signin"} %>
         </div>
         <% end %>
 
