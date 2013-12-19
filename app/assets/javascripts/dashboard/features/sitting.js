@@ -79,7 +79,7 @@ Dashboard.findLocation = function(string) {
 	     // make a bunch of different commit messages and sample them -- purely to keep people intereted in reading the messages
     	} else {
       console.log(response);
-      $("#current-sitting-location").text("Current Location: " + response.name).data("id", response.id)
+      $("#current-sitting-location").html("Current Location: </br>" + response.name).data("id", response.id)
       }
   });
 }

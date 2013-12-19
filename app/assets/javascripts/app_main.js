@@ -1,0 +1,1 @@
+// Put all the JS for the sidebar interactivity here

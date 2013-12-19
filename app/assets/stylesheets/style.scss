@@ -10,6 +10,9 @@ $dark-gray: rgba(0,0,0,.6);
 $button-color: #ca6612;
 
 
+// Font Sizes------------------------------------
+
+
 // test colors & attributes
 
 
@@ -33,8 +36,9 @@ body {
 }
 
 header {
+  font-family: Gudea;
   margin: 25px;
-  padding-bottom: 25px;
+  padding-bottom: 10px;
   border-bottom: 1px solid $black;
 }
 
@@ -53,6 +57,14 @@ h3 {
   margin: 0;
 }
 
+#location-name {
+  font-size: 20px;
+}
+
+.location-template {
+  margin: 10px 0;
+  padding: 0;
+}
 
 .minor-labels {
  font-size: 20px;
@@ -84,7 +96,7 @@ h3 {
   }
 }
 
-#login_nav {
+.login_nav {
   // margin-top: 30px;
   font-family: Gudea;
   color: $black;
@@ -101,6 +113,15 @@ h3 {
       background: darken($blue, 4%);
     }
   }
+}
+
+#signin {
+  float: right;
+  margin: 0;
+}
+
+#tag-line {
+  margin-top: 5px;
 }
 // =============================================================
 // Homepage view
@@ -148,6 +169,8 @@ form {
   margin: 0 auto;
   display: inline-block;
 }
+
+
 
 
 // =============================================================
