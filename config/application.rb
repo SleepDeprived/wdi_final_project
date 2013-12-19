@@ -60,7 +60,7 @@ module FinalProject
     config.assets.enabled = true
 # Fix for heroku
     config.assets.initialize_on_precompile = false
-    config.assets.precompile += ['location_map/location_map.js', 'dashboard/dashboard_app.js']
+    config.assets.precompile += ['location_map.js', 'dashboard_app.js']
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
   end
