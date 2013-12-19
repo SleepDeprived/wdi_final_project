@@ -30,9 +30,9 @@
 
     <aside id="side_nav" class="four columns">
 
-      <nav>
+      <!-- <nav>
         <ul>
-          <% if current_user %>
+          <%# if current_user %>
           <li>
             <a href="/">Home</a>
           </li>
@@ -42,8 +42,22 @@
           <li id="add_location">
             <a href="#">Add Location</a>
           </li>
-          <% end %>
+          <%# end %>
         </ul>
+      </nav>
+ -->
+      <nav>
+        <% if current_user %>
+        <div>
+          <a href="/">Locations</a>
+        </div>
+        <div>
+          <a href="/dashboard" id="dashboard">Dashboard</a>
+        </div>
+        <div>
+          <a href="#" id="add_location" >Add Location</a>
+        </div>
+        <% end %>
       </nav>
     
       <div id="location_form" style="display: none;">
