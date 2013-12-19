@@ -10,12 +10,12 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
-//= require ./setup
-//= require ./routes
-//= require_tree ./templates
-//= require_tree ./models
-//= require_tree ./collections
-//= require_tree ./views
-//= require_tree ./features
-//= require ./map
-//= require ./app
+//= require ./location_map/setup
+//= require ./location_map/routes
+//= require_tree ./location_map/templates
+//= require_tree ./location_map/models
+//= require_tree ./location_map/collections
+//= require_tree ./location_map/views
+//= require_tree ./location_map/features
+//= require ./location_map/map
+//= require ./location_map/app

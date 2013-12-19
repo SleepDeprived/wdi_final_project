@@ -1,4 +1,4 @@
-= javascript_include_tag "./dashboard/dashboard_app"
+= javascript_include_tag "dashboard_app"
 = javascript_include_tag "http://code.highcharts.com/highcharts.js"
 
 #sitting.five.columns.action-bar
@@ -38,7 +38,8 @@
 
 
 %figure#chart
-	Summary Graph
+	#gif-graph
+		= image_tag "ajax-loader.gif"
 	%script#summary-template.detail{ type: "text/x-handlebars-template"}
 		Name: = name
 

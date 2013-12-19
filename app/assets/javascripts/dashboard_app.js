@@ -10,11 +10,11 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
-//= require ./setup
-//= require ./routes
-//= require_tree ./templates
-//= require_tree ./models
-//= require_tree ./collections
-//= require_tree ./views
-//= require_tree ./features
-//= require ./dashapp
+//= require ./dashboard/setup
+//= require ./dashboard/routes
+//= require_tree ./dashboard/templates
+//= require_tree ./dashboard/models
+//= require_tree ./dashboard/collections
+//= require_tree ./dashboard/views
+//= require_tree ./dashboard/features
+//= require ./dashboard/dashapp

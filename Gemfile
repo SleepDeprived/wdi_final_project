@@ -47,6 +47,9 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'debugger'
 
+gem 'coveralls', require: false
+
+
 group :test do
   gem 'shoulda-matchers'
 end
@@ -60,7 +63,6 @@ group :development, :test do
   gem "selenium-webdriver"
   gem "jasmine"
   gem "pry-rails"
-  gem 'coveralls', require: false
 end
 
 group :development do
