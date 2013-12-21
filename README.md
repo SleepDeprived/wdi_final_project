@@ -17,7 +17,7 @@ Jimmy Davis:
 
 Tom Metzger
 
-- <http://www.tmtezger.com>
+- <http://www.tmetzger.com>
 - <http://github.com/SleepDeprived>
 
 #####Purpose of the Application
