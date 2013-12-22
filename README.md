@@ -3,7 +3,7 @@
 [![Coverage Status](https://coveralls.io/repos/SleepDeprived/wdi_final_project/badge.png?branch=master)](https://coveralls.io/r/SleepDeprived/wdi_final_project?branch=master)
 
 
-###TITLE OF APP
+###DevelUp
 
 ######Created by Jimmy Davis and Tom Metzger
 This application was created by Jimmy Davis and Tom Metzger as their final project for the Web Development Immersive program at General Assembly -- WDI 8 , Sept 2013  - Dec 2013
@@ -20,9 +20,9 @@ Tom Metzger
 - <http://www.tmetzger.com>
 - <http://github.com/SleepDeprived>
 
-#####Purpose of the Application
+####Purpose of the Application
 
-A productivity app for developers aimed at leveraging community knowlege and building developer networks.
+This is an application built by developers for developers. It identifies nearby locations that other developers have idetnfitied as good places to code, and it provides tools and metrics that enable developers track and improve their productivity. 
 
 
 
