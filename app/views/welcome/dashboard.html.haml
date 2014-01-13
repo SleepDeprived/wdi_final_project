@@ -32,6 +32,7 @@
 		Duration
 		=select_tag :time, options_for_select([["3 seconds", 0.05], ["10 minutes", 10], ["15 minutes", 15], ["20 minutes", 20], ["30 minutes", 30], ["45 minutes", 45], ["60 minutes", 60]])
 		=submit_tag "Start Timer", id: "start_timer_button"
+		/ =button_tag "Stop Timer", id: "stop_timer_button"
 	
 		%p#countdown-timer.offset-by-one
 

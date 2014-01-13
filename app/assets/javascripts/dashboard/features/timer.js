@@ -18,26 +18,27 @@ function timer() {
 		// converts minutes to seconds (setInterval is set in seconds)
 		var duration = durationInMinutes * 60;
 		var counter = setInterval(countdown,1000);
-
-		function countdown() {
-		  if (duration <= 0) {
-		     var alarm = window.webkitNotifications.createNotification('rails.png', 'Time to Commit', "I pity the fool who doesn't commit").show();
-		     // make a bunch of different commit messages and sample them -- purely to keep people intereted in reading the messages
-		     // add a sound 
-		     // use choir.io (bloop: [alarm, kasplode, horn, warble, success, cheer], submarine: [echopop, dolphinchuckle, lownar, submed, orca])
-		     clearInterval(counter); //this isn't working, check into it
-		     $("#countdown-timer").html('');
-		     // also need to reset the timer -- have click create new Timer object instead?
-		     return;
-		  }
-		  //Do code for showing the number of seconds here
-		  var minutes = Math.floor(duration / 60);
-		  var seconds = duration - minutes * 60;
-		  $("#countdown-timer").html(minutes + " min " + seconds + " sec"); // watch for spelling
-		  duration = duration-1;
-		} //end of countdown function
 	}
 }	
+
+
+function countdown() {
+  if (duration <= 0) {
+     var alarm = window.webkitNotifications.createNotification('rails.png', 'Time to Commit', "I pity the fool who doesn't commit").show();
+     // make a bunch of different commit messages and sample them -- purely to keep people intereted in reading the messages
+     // add a sound 
+     // use choir.io (bloop: [alarm, kasplode, horn, warble, success, cheer], submarine: [echopop, dolphinchuckle, lownar, submed, orca])
+     clearInterval(counter); //this isn't working, check into it
+     $("#countdown-timer").html('');
+     // also need to reset the timer -- have click create new Timer object instead?
+     return;
+  }
+  //Do code for showing the number of seconds here
+  var minutes = Math.floor(duration / 60);
+  var seconds = duration - minutes * 60;
+  $("#countdown-timer").html(minutes + " min " + seconds + " sec"); // watch for spelling
+  duration = duration-1;
+} //end of countdown function
 
 
 // function sample(a, n) {
