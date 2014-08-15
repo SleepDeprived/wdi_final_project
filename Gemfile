@@ -50,10 +50,6 @@ gem 'jquery-rails'
 gem 'coveralls', require: false
 
 
-group :test do
-  gem 'shoulda-matchers'
-end
-
 group :development, :test do
   gem "rspec-rails", "~> 3.0.2"
   gem "factory_girl_rails", "~> 4.4.1"
@@ -70,7 +66,7 @@ group :development do
   gem "rails-erd"
   gem "better_errors"
   gem "terminal-notifier-guard"
-gem "awesome_print", "~> 1.2.0"
+  gem "awesome_print", "~> 1.2.0"
   gem 'guard-rspec', '~> 4.3.1'
   gem 'guard-spork', '~> 1.5.1'
   gem 'spork-rails', github: 'sporkrb/spork-rails'
