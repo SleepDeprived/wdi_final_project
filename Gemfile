@@ -56,6 +56,7 @@ end
 
 group :development, :test do
   gem "rspec-rails"
+  gem "factory_girl_rails"
   gem "guard-rspec"
   gem "capybara"
   gem "database_cleaner"
@@ -74,6 +75,12 @@ group :development do
   gem "better_errors"
   gem "terminal-notifier-guard"
   gem "awesome_print"
+  gem "faker", "~> 1.1.2"
+  gem "capybara", "~> 2.1.0"
+  gem "database_cleaner", "~> 1.0.1"
+  gem "launchy", "~> 2.3.0"
+  gem "shoulda-matchers", "~> 2.2.0"
+  gem "selenium-webdriver", "~> 2.35.1"
 end
 
 gem "simplecov", :require => false, :group => :test
