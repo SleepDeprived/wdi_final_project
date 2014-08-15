@@ -57,7 +57,6 @@ end
 group :development, :test do
   gem "rspec-rails"
   gem "factory_girl_rails"
-  gem "guard-rspec"
   gem "capybara"
   gem "database_cleaner"
   gem "capybara-webkit"
@@ -75,6 +74,13 @@ group :development do
   gem "better_errors"
   gem "terminal-notifier-guard"
   gem "awesome_print"
+  gem 'guard-rspec', '~> 3.0.2'
+  gem 'guard-spork', '~> 1.5.1'
+  gem 'spork-rails', github: 'sporkrb/spork-rails'
+  gem 'rb-fsevent', '~> 0.9.3'
+end
+
+group :test do
   gem "faker", "~> 1.1.2"
   gem "capybara", "~> 2.1.0"
   gem "database_cleaner", "~> 1.0.1"
