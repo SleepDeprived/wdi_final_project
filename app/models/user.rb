@@ -2,6 +2,8 @@ class User < ActiveRecord::Base
   attr_accessible :email, :github_image, :github_username, :name, :oauth_expires_at, :oauth_token, :provider, :uid
   has_many :locations, through: :sittings
   has_many :sittings
+  validates :email, :github_username, presence: true, uniqueness: true
+
   attr_accessor :github_data
 
   def self.create_with_omniauth(auth)
